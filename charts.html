@@ -1,0 +1,2592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore 54 interactive Plotly.js chart examples, from lines and bars to heatmaps, Sankey flows, financial charts, and gauges."
+    />
+    <title>Chart gallery — Foundation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link href="assets/css/charts.css" rel="stylesheet" />
+    <script
+      src="https://cdn.plot.ly/plotly-4.1.1.min.js"
+      charset="utf-8"
+      defer
+    ></script>
+    <script src="assets/js/charts-data.js" defer></script>
+    <script src="assets/js/charts.js" defer></script>
+    <!-- Palette overrides must load after all other stylesheets. -->
+    <link href="assets/css/tanner.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="visually-hidden-focusable skip-link" href="#main"
+      >Skip to content</a
+    >
+    <nav
+      class="navbar sticky-top bg-white border-bottom"
+      aria-label="Main navigation"
+    >
+      <div class="container-xxl">
+        <a
+          class="navbar-brand fw-bold d-flex align-items-center gap-2"
+          href="index.html"
+          ><span class="brand-mark">f.</span> foundation<span class="brand-dot"
+            >/</span
+          ></a
+        >
+        <div class="chart-nav">
+          <a href="index.html#components">Components</a
+          ><a href="tables.html">Tables</a
+          ><a
+            class="btn btn-sm btn-outline-primary"
+            href="charts.html"
+            aria-current="page"
+            >Charts</a
+          >
+        </div>
+      </div>
+    </nav>
+    <header class="chart-hero border-bottom">
+      <div class="container-xxl py-5">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb small">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Chart gallery
+            </li>
+          </ol>
+        </nav>
+        <div class="row g-4 align-items-center mt-2">
+          <div class="col-lg-8">
+            <div class="eyebrow mb-3">
+              <span class="status-dot"></span> THE FOUNDATION / DATA STORIES
+            </div>
+            <h1>
+              A new perspective.<br /><span class="text-primary"
+                >In every chart.</span
+              >
+            </h1>
+            <p class="hero-description">
+              54 interactive examples to turn numbers into something meaningful.
+              Find your format, explore the data, and make it your own.
+            </p>
+            <div class="d-flex flex-wrap gap-3 small text-secondary">
+              <span>✓ 6 collections</span><span>✓ Interactive by default</span
+              ><span>✓ Ready to customize</span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="chart-hero-art" aria-hidden="true">
+              <div class="art-label">A LITTLE CLARITY, AT A GLANCE</div>
+              <div class="mini-bars">
+                <i style="--bar: 36%"></i><i style="--bar: 58%"></i
+                ><i style="--bar: 46%"></i><i style="--bar: 72%"></i
+                ><i style="--bar: 64%"></i><i style="--bar: 92%"></i>
+              </div>
+              <div class="d-flex justify-content-between mt-3">
+                <strong>54 ways to see it.</strong><span>↗</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main" class="container-xxl py-5">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">EXPLORE THE COLLECTION</div>
+          <h2>Find the right chart</h2>
+          <p>
+            Every example includes sample data and a reusable Plotly definition.
+          </p>
+        </div>
+      </div>
+      <noscript
+        ><div class="alert alert-warning">
+          Enable JavaScript to render the interactive charts and use the
+          filters. Chart titles and descriptions are available below.
+        </div></noscript
+      >
+      <form class="chart-filters" role="search" onsubmit="return false;">
+        <div class="search-field">
+          <label for="chartSearch" class="form-label">Search charts</label
+          ><input
+            type="search"
+            id="chartSearch"
+            class="form-control"
+            placeholder="Try heatmap, line, or distribution…"
+          />
+        </div>
+        <div>
+          <label for="chartCategory" class="form-label">Collection</label
+          ><select id="chartCategory" class="form-select">
+            <option value="all">All collections</option>
+            <option value="Trends">Trends</option>
+            <option value="Comparison">Comparison</option>
+            <option value="Distribution">Distribution</option>
+            <option value="Relationships">Relationships</option>
+            <option value="Composition">Composition</option>
+            <option value="Specialized">Specialized</option>
+          </select>
+        </div>
+        <button
+          id="resetFilters"
+          type="button"
+          class="btn btn-outline-secondary"
+        >
+          Reset filters
+        </button>
+      </form>
+      <div class="chart-status-row">
+        <span id="resultCount" role="status">54 of 54 charts</span
+        ><span id="libraryStatus">Loading Plotly…</span>
+      </div>
+      <p class="chart-help">
+        All data is illustrative. Hover for values, drag to zoom where
+        supported, or use the chart toolbar to reset and download a PNG.
+        Descriptions provide a text summary of each chart.
+      </p>
+      <div id="emptyState" class="empty-state" hidden>
+        <h2 class="h5">No matching charts</h2>
+        <p class="mb-0">
+          Try another search or reset the filters to see the full collection.
+        </p>
+      </div>
+      <div class="chart-grid">
+        <article
+          class="chart-card"
+          id="chart-01"
+          aria-labelledby="chart-01-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">01</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-01"
+              aria-label="Link to Classic line"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-01-title">Classic line</h2>
+          <p id="chart-01-summary" class="chart-description">
+            Monthly sales rise from 24 to 62 units, with a small dip in March.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-01-plot"
+              role="region"
+              aria-label="Classic line interactive chart"
+              aria-describedby="chart-01-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Classic line Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-02"
+          aria-labelledby="chart-02-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">02</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-02"
+              aria-label="Link to Multiple lines"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-02-title">Multiple lines</h2>
+          <p id="chart-02-summary" class="chart-description">
+            Compare sales and a steadily increasing target over six months.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-02-plot"
+              role="region"
+              aria-label="Multiple lines interactive chart"
+              aria-describedby="chart-02-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Multiple lines Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-03"
+          aria-labelledby="chart-03-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">03</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-03"
+              aria-label="Link to Smooth spline"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-03-title">Smooth spline</h2>
+          <p id="chart-03-summary" class="chart-description">
+            A curved line emphasizes the overall shape of monthly demand.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-03-plot"
+              role="region"
+              aria-label="Smooth spline interactive chart"
+              aria-describedby="chart-03-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Smooth spline Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-04"
+          aria-labelledby="chart-04-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">04</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-04"
+              aria-label="Link to Step line"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-04-title">Step line</h2>
+          <p id="chart-04-summary" class="chart-description">
+            Capacity changes in discrete steps rather than continuously.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-04-plot"
+              role="region"
+              aria-label="Step line interactive chart"
+              aria-describedby="chart-04-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Step line Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-05"
+          aria-labelledby="chart-05-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">05</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-05"
+              aria-label="Link to Filled area"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-05-title">Filled area</h2>
+          <p id="chart-05-summary" class="chart-description">
+            A filled baseline emphasizes the size of the monthly total.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-05-plot"
+              role="region"
+              aria-label="Filled area interactive chart"
+              aria-describedby="chart-05-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Filled area Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-06"
+          aria-labelledby="chart-06-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">06</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-06"
+              aria-label="Link to Stacked area"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-06-title">Stacked area</h2>
+          <p id="chart-06-summary" class="chart-description">
+            Organic and referral traffic combine into a growing total.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-06-plot"
+              role="region"
+              aria-label="Stacked area interactive chart"
+              aria-describedby="chart-06-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Stacked area Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-07"
+          aria-labelledby="chart-07-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">07</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-07"
+              aria-label="Link to Confidence band"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-07-title">Confidence band</h2>
+          <p id="chart-07-summary" class="chart-description">
+            An illustrative uncertainty band surrounds the central forecast.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-07-plot"
+              role="region"
+              aria-label="Confidence band interactive chart"
+              aria-describedby="chart-07-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Confidence band Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-08"
+          aria-labelledby="chart-08-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">08</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-08"
+              aria-label="Link to Dashed forecast"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-08-title">Dashed forecast</h2>
+          <p id="chart-08-summary" class="chart-description">
+            A dashed segment distinguishes future estimates from observed
+            values.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-08-plot"
+              role="region"
+              aria-label="Dashed forecast interactive chart"
+              aria-describedby="chart-08-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Dashed forecast Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-09"
+          aria-labelledby="chart-09-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">09</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-09"
+              aria-label="Link to Range slider"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-09-title">Range slider</h2>
+          <p id="chart-09-summary" class="chart-description">
+            Use the slider below the timeline to inspect a smaller date window.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-09-plot"
+              role="region"
+              aria-label="Range slider interactive chart"
+              aria-describedby="chart-09-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Range slider Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-10"
+          aria-labelledby="chart-10-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">10</span
+            ><span class="chart-category">Trends</span
+            ><a
+              class="chart-permalink"
+              href="#chart-10"
+              aria-label="Link to Logarithmic growth"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-10-title">Logarithmic growth</h2>
+          <p id="chart-10-summary" class="chart-description">
+            A logarithmic vertical axis makes exponential growth easier to
+            compare.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-10-plot"
+              role="region"
+              aria-label="Logarithmic growth interactive chart"
+              aria-describedby="chart-10-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Logarithmic growth Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-11"
+          aria-labelledby="chart-11-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">11</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-11"
+              aria-label="Link to Vertical bars"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-11-title">Vertical bars</h2>
+          <p id="chart-11-summary" class="chart-description">
+            Engineering has the largest project count among four teams.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-11-plot"
+              role="region"
+              aria-label="Vertical bars interactive chart"
+              aria-describedby="chart-11-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Vertical bars Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-12"
+          aria-labelledby="chart-12-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">12</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-12"
+              aria-label="Link to Horizontal bars"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-12-title">Horizontal bars</h2>
+          <p id="chart-12-summary" class="chart-description">
+            Horizontal labels give category names room to breathe.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-12-plot"
+              role="region"
+              aria-label="Horizontal bars interactive chart"
+              aria-describedby="chart-12-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Horizontal bars Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-13"
+          aria-labelledby="chart-13-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">13</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-13"
+              aria-label="Link to Grouped bars"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-13-title">Grouped bars</h2>
+          <p id="chart-13-summary" class="chart-description">
+            Compare completed and planned work side by side for each team.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-13-plot"
+              role="region"
+              aria-label="Grouped bars interactive chart"
+              aria-describedby="chart-13-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Grouped bars Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-14"
+          aria-labelledby="chart-14-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">14</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-14"
+              aria-label="Link to Stacked bars"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-14-title">Stacked bars</h2>
+          <p id="chart-14-summary" class="chart-description">
+            Completed work and remaining work add up to each team’s workload.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-14-plot"
+              role="region"
+              aria-label="Stacked bars interactive chart"
+              aria-describedby="chart-14-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Stacked bars Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-15"
+          aria-labelledby="chart-15-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">15</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-15"
+              aria-label="Link to 100% stacked bars"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-15-title">100% stacked bars</h2>
+          <p id="chart-15-summary" class="chart-description">
+            Normalize each team’s workload to compare completion percentages.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-15-plot"
+              role="region"
+              aria-label="100% stacked bars interactive chart"
+              aria-describedby="chart-15-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="100% stacked bars Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-16"
+          aria-labelledby="chart-16-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">16</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-16"
+              aria-label="Link to Diverging bars"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-16-title">Diverging bars</h2>
+          <p id="chart-16-summary" class="chart-description">
+            Positive and negative responses extend in opposite directions.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-16-plot"
+              role="region"
+              aria-label="Diverging bars interactive chart"
+              aria-describedby="chart-16-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Diverging bars Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-17"
+          aria-labelledby="chart-17-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">17</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-17"
+              aria-label="Link to Patterned bars"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-17-title">Patterned bars</h2>
+          <p id="chart-17-summary" class="chart-description">
+            Patterns provide an additional visual cue beyond category color.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-17-plot"
+              role="region"
+              aria-label="Patterned bars interactive chart"
+              aria-describedby="chart-17-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Patterned bars Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-18"
+          aria-labelledby="chart-18-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">18</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-18"
+              aria-label="Link to Lollipop"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-18-title">Lollipop</h2>
+          <p id="chart-18-summary" class="chart-description">
+            Thin stems and large markers create a lighter alternative to bars.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-18-plot"
+              role="region"
+              aria-label="Lollipop interactive chart"
+              aria-describedby="chart-18-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Lollipop Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-19"
+          aria-labelledby="chart-19-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">19</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-19"
+              aria-label="Link to Dumbbell"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-19-title">Dumbbell</h2>
+          <p id="chart-19-summary" class="chart-description">
+            Connecting two dots reveals the change from before to after.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-19-plot"
+              role="region"
+              aria-label="Dumbbell interactive chart"
+              aria-describedby="chart-19-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Dumbbell Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-20"
+          aria-labelledby="chart-20-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">20</span
+            ><span class="chart-category">Comparison</span
+            ><a
+              class="chart-permalink"
+              href="#chart-20"
+              aria-label="Link to Ranked dot plot"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-20-title">Ranked dot plot</h2>
+          <p id="chart-20-summary" class="chart-description">
+            Ordered dots make differences between category totals easy to scan.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-20-plot"
+              role="region"
+              aria-label="Ranked dot plot interactive chart"
+              aria-describedby="chart-20-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Ranked dot plot Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-21"
+          aria-labelledby="chart-21-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">21</span
+            ><span class="chart-category">Distribution</span
+            ><a
+              class="chart-permalink"
+              href="#chart-21"
+              aria-label="Link to Histogram"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-21-title">Histogram</h2>
+          <p id="chart-21-summary" class="chart-description">
+            Count observations within equal-width bins.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-21-plot"
+              role="region"
+              aria-label="Histogram interactive chart"
+              aria-describedby="chart-21-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Histogram Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-22"
+          aria-labelledby="chart-22-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">22</span
+            ><span class="chart-category">Distribution</span
+            ><a
+              class="chart-permalink"
+              href="#chart-22"
+              aria-label="Link to Overlaid histograms"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-22-title">Overlaid histograms</h2>
+          <p id="chart-22-summary" class="chart-description">
+            Transparent distributions reveal overlap between two cohorts.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-22-plot"
+              role="region"
+              aria-label="Overlaid histograms interactive chart"
+              aria-describedby="chart-22-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Overlaid histograms Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-23"
+          aria-labelledby="chart-23-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">23</span
+            ><span class="chart-category">Distribution</span
+            ><a
+              class="chart-permalink"
+              href="#chart-23"
+              aria-label="Link to Cumulative histogram"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-23-title">Cumulative histogram</h2>
+          <p id="chart-23-summary" class="chart-description">
+            The cumulative percentage reaches 100% at the largest observations.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-23-plot"
+              role="region"
+              aria-label="Cumulative histogram interactive chart"
+              aria-describedby="chart-23-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Cumulative histogram Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-24"
+          aria-labelledby="chart-24-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">24</span
+            ><span class="chart-category">Distribution</span
+            ><a
+              class="chart-permalink"
+              href="#chart-24"
+              aria-label="Link to Box plot"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-24-title">Box plot</h2>
+          <p id="chart-24-summary" class="chart-description">
+            Quartiles and whiskers summarize two cohorts with different centers.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-24-plot"
+              role="region"
+              aria-label="Box plot interactive chart"
+              aria-describedby="chart-24-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Box plot Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-25"
+          aria-labelledby="chart-25-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">25</span
+            ><span class="chart-category">Distribution</span
+            ><a
+              class="chart-permalink"
+              href="#chart-25"
+              aria-label="Link to Horizontal box plot"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-25-title">Horizontal box plot</h2>
+          <p id="chart-25-summary" class="chart-description">
+            Horizontal distributions make room for longer group labels.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-25-plot"
+              role="region"
+              aria-label="Horizontal box plot interactive chart"
+              aria-describedby="chart-25-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Horizontal box plot Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-26"
+          aria-labelledby="chart-26-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">26</span
+            ><span class="chart-category">Distribution</span
+            ><a
+              class="chart-permalink"
+              href="#chart-26"
+              aria-label="Link to Violin plot"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-26-title">Violin plot</h2>
+          <p id="chart-26-summary" class="chart-description">
+            The width of each violin describes the shape of its distribution.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-26-plot"
+              role="region"
+              aria-label="Violin plot interactive chart"
+              aria-describedby="chart-26-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Violin plot Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-27"
+          aria-labelledby="chart-27-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">27</span
+            ><span class="chart-category">Distribution</span
+            ><a
+              class="chart-permalink"
+              href="#chart-27"
+              aria-label="Link to Jittered observations"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-27-title">Jittered observations</h2>
+          <p id="chart-27-summary" class="chart-description">
+            Individual observations are spread around a box summary.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-27-plot"
+              role="region"
+              aria-label="Jittered observations interactive chart"
+              aria-describedby="chart-27-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Jittered observations Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-28"
+          aria-labelledby="chart-28-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">28</span
+            ><span class="chart-category">Distribution</span
+            ><a
+              class="chart-permalink"
+              href="#chart-28"
+              aria-label="Link to Empirical cumulative curve"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-28-title">Empirical cumulative curve</h2>
+          <p id="chart-28-summary" class="chart-description">
+            Each sorted observation contributes an equal step to the cumulative
+            share.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-28-plot"
+              role="region"
+              aria-label="Empirical cumulative curve interactive chart"
+              aria-describedby="chart-28-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Empirical cumulative curve Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-29"
+          aria-labelledby="chart-29-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">29</span
+            ><span class="chart-category">Relationships</span
+            ><a
+              class="chart-permalink"
+              href="#chart-29"
+              aria-label="Link to Scatter plot"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-29-title">Scatter plot</h2>
+          <p id="chart-29-summary" class="chart-description">
+            The sample points show a positive relationship with some variation.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-29-plot"
+              role="region"
+              aria-label="Scatter plot interactive chart"
+              aria-describedby="chart-29-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Scatter plot Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-30"
+          aria-labelledby="chart-30-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">30</span
+            ><span class="chart-category">Relationships</span
+            ><a
+              class="chart-permalink"
+              href="#chart-30"
+              aria-label="Link to Bubble chart"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-30-title">Bubble chart</h2>
+          <p id="chart-30-summary" class="chart-description">
+            Marker size adds a third dimension to the relationship.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-30-plot"
+              role="region"
+              aria-label="Bubble chart interactive chart"
+              aria-describedby="chart-30-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Bubble chart Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-31"
+          aria-labelledby="chart-31-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">31</span
+            ><span class="chart-category">Relationships</span
+            ><a
+              class="chart-permalink"
+              href="#chart-31"
+              aria-label="Link to Continuous color scatter"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-31-title">Continuous color scatter</h2>
+          <p id="chart-31-summary" class="chart-description">
+            Marker color encodes a continuous score alongside position.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-31-plot"
+              role="region"
+              aria-label="Continuous color scatter interactive chart"
+              aria-describedby="chart-31-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Continuous color scatter Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-32"
+          aria-labelledby="chart-32-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">32</span
+            ><span class="chart-category">Relationships</span
+            ><a
+              class="chart-permalink"
+              href="#chart-32"
+              aria-label="Link to Error bars"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-32-title">Error bars</h2>
+          <p id="chart-32-summary" class="chart-description">
+            Vertical error bars communicate illustrative measurement
+            uncertainty.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-32-plot"
+              role="region"
+              aria-label="Error bars interactive chart"
+              aria-describedby="chart-32-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Error bars Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-33"
+          aria-labelledby="chart-33-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">33</span
+            ><span class="chart-category">Relationships</span
+            ><a
+              class="chart-permalink"
+              href="#chart-33"
+              aria-label="Link to Reference trend line"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-33-title">Reference trend line</h2>
+          <p id="chart-33-summary" class="chart-description">
+            Observed points are compared with the known generating trend, not a
+            fitted regression.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-33-plot"
+              role="region"
+              aria-label="Reference trend line interactive chart"
+              aria-describedby="chart-33-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Reference trend line Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-34"
+          aria-labelledby="chart-34-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">34</span
+            ><span class="chart-category">Relationships</span
+            ><a
+              class="chart-permalink"
+              href="#chart-34"
+              aria-label="Link to Connected scatter"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-34-title">Connected scatter</h2>
+          <p id="chart-34-summary" class="chart-description">
+            A connecting path reveals the order of six observations.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-34-plot"
+              role="region"
+              aria-label="Connected scatter interactive chart"
+              aria-describedby="chart-34-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Connected scatter Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-35"
+          aria-labelledby="chart-35-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">35</span
+            ><span class="chart-category">Composition</span
+            ><a
+              class="chart-permalink"
+              href="#chart-35"
+              aria-label="Link to Pie chart"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-35-title">Pie chart</h2>
+          <p id="chart-35-summary" class="chart-description">
+            Slices show the four traffic sources as parts of a whole.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-35-plot"
+              role="region"
+              aria-label="Pie chart interactive chart"
+              aria-describedby="chart-35-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Pie chart Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-36"
+          aria-labelledby="chart-36-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">36</span
+            ><span class="chart-category">Composition</span
+            ><a
+              class="chart-permalink"
+              href="#chart-36"
+              aria-label="Link to Donut chart"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-36-title">Donut chart</h2>
+          <p id="chart-36-summary" class="chart-description">
+            A central opening leaves room for a concise total.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-36-plot"
+              role="region"
+              aria-label="Donut chart interactive chart"
+              aria-describedby="chart-36-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Donut chart Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-37"
+          aria-labelledby="chart-37-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">37</span
+            ><span class="chart-category">Composition</span
+            ><a
+              class="chart-permalink"
+              href="#chart-37"
+              aria-label="Link to Pulled slice"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-37-title">Pulled slice</h2>
+          <p id="chart-37-summary" class="chart-description">
+            One separated slice emphasizes the largest traffic source.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-37-plot"
+              role="region"
+              aria-label="Pulled slice interactive chart"
+              aria-describedby="chart-37-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Pulled slice Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-38"
+          aria-labelledby="chart-38-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">38</span
+            ><span class="chart-category">Composition</span
+            ><a
+              class="chart-permalink"
+              href="#chart-38"
+              aria-label="Link to Treemap"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-38-title">Treemap</h2>
+          <p id="chart-38-summary" class="chart-description">
+            Nested rectangles show category sizes within a hierarchy.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-38-plot"
+              role="region"
+              aria-label="Treemap interactive chart"
+              aria-describedby="chart-38-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Treemap Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-39"
+          aria-labelledby="chart-39-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">39</span
+            ><span class="chart-category">Composition</span
+            ><a
+              class="chart-permalink"
+              href="#chart-39"
+              aria-label="Link to Sunburst"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-39-title">Sunburst</h2>
+          <p id="chart-39-summary" class="chart-description">
+            Concentric rings reveal parent-child relationships.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-39-plot"
+              role="region"
+              aria-label="Sunburst interactive chart"
+              aria-describedby="chart-39-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Sunburst Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-40"
+          aria-labelledby="chart-40-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">40</span
+            ><span class="chart-category">Composition</span
+            ><a
+              class="chart-permalink"
+              href="#chart-40"
+              aria-label="Link to Icicle"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-40-title">Icicle</h2>
+          <p id="chart-40-summary" class="chart-description">
+            Rectangular tiers display the same hierarchy from top to bottom.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-40-plot"
+              role="region"
+              aria-label="Icicle interactive chart"
+              aria-describedby="chart-40-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Icicle Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-41"
+          aria-labelledby="chart-41-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">41</span
+            ><span class="chart-category">Composition</span
+            ><a
+              class="chart-permalink"
+              href="#chart-41"
+              aria-label="Link to Funnel area"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-41-title">Funnel area</h2>
+          <p id="chart-41-summary" class="chart-description">
+            Area narrows as prospects move through the sample sales process.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-41-plot"
+              role="region"
+              aria-label="Funnel area interactive chart"
+              aria-describedby="chart-41-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Funnel area Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-42"
+          aria-labelledby="chart-42-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">42</span
+            ><span class="chart-category">Composition</span
+            ><a
+              class="chart-permalink"
+              href="#chart-42"
+              aria-label="Link to Sankey flow"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-42-title">Sankey flow</h2>
+          <p id="chart-42-summary" class="chart-description">
+            Link widths show how traffic sources split across two destinations.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-42-plot"
+              role="region"
+              aria-label="Sankey flow interactive chart"
+              aria-describedby="chart-42-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Sankey flow Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-43"
+          aria-labelledby="chart-43-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">43</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-43"
+              aria-label="Link to Heatmap"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-43-title">Heatmap</h2>
+          <p id="chart-43-summary" class="chart-description">
+            Color intensity reveals patterns in a team-by-day matrix.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-43-plot"
+              role="region"
+              aria-label="Heatmap interactive chart"
+              aria-describedby="chart-43-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Heatmap Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-44"
+          aria-labelledby="chart-44-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">44</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-44"
+              aria-label="Link to Annotated heatmap"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-44-title">Annotated heatmap</h2>
+          <p id="chart-44-summary" class="chart-description">
+            Printed values make the colored matrix readable without relying on
+            color alone.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-44-plot"
+              role="region"
+              aria-label="Annotated heatmap interactive chart"
+              aria-describedby="chart-44-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Annotated heatmap Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-45"
+          aria-labelledby="chart-45-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">45</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-45"
+              aria-label="Link to Filled contour"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-45-title">Filled contour</h2>
+          <p id="chart-45-summary" class="chart-description">
+            Contour bands connect equal levels on a sample response surface.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-45-plot"
+              role="region"
+              aria-label="Filled contour interactive chart"
+              aria-describedby="chart-45-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Filled contour Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-46"
+          aria-labelledby="chart-46-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">46</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-46"
+              aria-label="Link to Contour lines"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-46-title">Contour lines</h2>
+          <p id="chart-46-summary" class="chart-description">
+            Labeled contour lines expose the shape of the surface without filled
+            bands.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-46-plot"
+              role="region"
+              aria-label="Contour lines interactive chart"
+              aria-describedby="chart-46-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Contour lines Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-47"
+          aria-labelledby="chart-47-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">47</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-47"
+              aria-label="Link to Radar comparison"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-47-title">Radar comparison</h2>
+          <p id="chart-47-summary" class="chart-description">
+            Compare two profiles across five common capabilities.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-47-plot"
+              role="region"
+              aria-label="Radar comparison interactive chart"
+              aria-describedby="chart-47-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Radar comparison Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-48"
+          aria-labelledby="chart-48-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">48</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-48"
+              aria-label="Link to Polar bars"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-48-title">Polar bars</h2>
+          <p id="chart-48-summary" class="chart-description">
+            Radial bars represent counts across eight compass directions.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-48-plot"
+              role="region"
+              aria-label="Polar bars interactive chart"
+              aria-describedby="chart-48-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Polar bars Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-49"
+          aria-labelledby="chart-49-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">49</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-49"
+              aria-label="Link to Waterfall"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-49-title">Waterfall</h2>
+          <p id="chart-49-summary" class="chart-description">
+            Positive and negative contributions bridge an opening and closing
+            balance.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-49-plot"
+              role="region"
+              aria-label="Waterfall interactive chart"
+              aria-describedby="chart-49-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Waterfall Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-50"
+          aria-labelledby="chart-50-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">50</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-50"
+              aria-label="Link to Conversion funnel"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-50-title">Conversion funnel</h2>
+          <p id="chart-50-summary" class="chart-description">
+            Horizontal stages compare visitor counts through a conversion
+            process.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-50-plot"
+              role="region"
+              aria-label="Conversion funnel interactive chart"
+              aria-describedby="chart-50-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Conversion funnel Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-51"
+          aria-labelledby="chart-51-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">51</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-51"
+              aria-label="Link to Angular gauge"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-51-title">Angular gauge</h2>
+          <p id="chart-51-summary" class="chart-description">
+            An indicator shows 72 out of 100 against an 85-point threshold.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-51-plot"
+              role="region"
+              aria-label="Angular gauge interactive chart"
+              aria-describedby="chart-51-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Angular gauge Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-52"
+          aria-labelledby="chart-52-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">52</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-52"
+              aria-label="Link to Bullet indicator"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-52-title">Bullet indicator</h2>
+          <p id="chart-52-summary" class="chart-description">
+            A compact gauge compares current performance with a target of 90.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-52-plot"
+              role="region"
+              aria-label="Bullet indicator interactive chart"
+              aria-describedby="chart-52-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre
+              tabindex="0"
+              aria-label="Bullet indicator Plotly definition"
+            ></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-53"
+          aria-labelledby="chart-53-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">53</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-53"
+              aria-label="Link to Candlestick"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-53-title">Candlestick</h2>
+          <p id="chart-53-summary" class="chart-description">
+            Daily open, high, low, and close values describe sample price
+            movement.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-53-plot"
+              role="region"
+              aria-label="Candlestick interactive chart"
+              aria-describedby="chart-53-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="Candlestick Plotly definition"></pre>
+          </details>
+        </article>
+        <article
+          class="chart-card"
+          id="chart-54"
+          aria-labelledby="chart-54-title"
+        >
+          <div class="chart-card-heading">
+            <span class="chart-number">54</span
+            ><span class="chart-category">Specialized</span
+            ><a
+              class="chart-permalink"
+              href="#chart-54"
+              aria-label="Link to OHLC"
+              >↗</a
+            >
+          </div>
+          <h2 id="chart-54-title">OHLC</h2>
+          <p id="chart-54-summary" class="chart-description">
+            Thin price bars offer another view of the same daily market ranges.
+          </p>
+          <div class="chart-stage">
+            <p class="chart-loading" role="status">
+              Chart loads when you scroll into view.
+            </p>
+            <div
+              class="chart-plot"
+              id="chart-54-plot"
+              role="region"
+              aria-label="OHLC interactive chart"
+              aria-describedby="chart-54-summary"
+              aria-busy="true"
+            ></div>
+          </div>
+          <details class="chart-source">
+            <summary>
+              View chart definition <span aria-hidden="true">&lt;/&gt;</span>
+            </summary>
+            <p>
+              Pass these data, layout, and config objects to
+              <code>Plotly.newPlot()</code>.
+            </p>
+            <pre tabindex="0" aria-label="OHLC Plotly definition"></pre>
+          </details>
+        </article>
+      </div>
+    </main>
+    <footer class="border-top py-4">
+      <div class="container-xxl d-flex flex-wrap justify-content-between gap-3">
+        <a class="text-dark fw-bold text-decoration-none" href="index.html"
+          >foundation<span class="brand-dot">/</span></a
+        ><span class="small text-secondary"
+          >Built with Plotly.js. A little perspective goes a long way.</span
+        ><a
+          href="https://plotly.com/javascript/"
+          class="small"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Plotly documentation ↗</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
