@@ -28,3 +28,9 @@ Forms are demos: nothing is submitted, uploaded, or stored. Buttons in the varia
 Check desktop, tablet, and mobile widths. Exercise tabs, dropdown, accordion, collapse, carousel arrows, modal and offcanvas (including Escape and focus return), toast, tooltip hover/focus, and popover toggling. Submit an empty form, then a valid form, and reset it. Verify the range label and pagination update. Tab through the page and check browser console/network errors.
 
 Bootstrap documentation: https://getbootstrap.com/docs/5.3/
+
+## Table gallery
+
+Open `tables.html` directly, or choose **Tables** in the main navigation, to explore 24 static table examples. A linked index makes every format easy to find. Examples include Bootstrap variants, status badges, a directory, progress tracking, invoice totals, plan comparison, grouped headers, a key-value record, sticky headers and columns, a capacity heatmap, and a leaderboard.
+
+Copy an example's semantic table markup and responsive wrapper. Custom formats also need their corresponding rules from `assets/css/tables.css`, loaded after the shared stylesheet. Every table has a caption and scoped headers. Wide tables scroll inside keyboard-focusable regions. This gallery needs no JavaScript; all example data is illustrative.
