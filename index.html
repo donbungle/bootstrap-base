@@ -1,0 +1,1295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A ready-to-use Bootstrap starter with a complete collection of live component examples."
+    />
+    <title>Foundation — Bootstrap starter kit</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="visually-hidden-focusable skip-link" href="#main"
+      >Skip to content</a
+    >
+    <!-- Responsive navbar: the bundle powers the mobile collapse. -->
+    <nav
+      class="navbar navbar-expand-lg sticky-top bg-white border-bottom"
+      aria-label="Main navigation"
+    >
+      <div class="container-xxl">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#"
+          ><span class="brand-mark">f.</span> foundation<span class="brand-dot"
+            >/</span
+          ></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto gap-lg-4">
+            <li class="nav-item">
+              <a class="nav-link active" href="#components">Components</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#layout">Layout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#forms">Forms</a>
+            </li>
+          </ul>
+          <a
+            class="btn btn-sm btn-outline-dark"
+            href="https://getbootstrap.com/docs/5.3/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Bootstrap docs <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </div>
+    </nav>
+    <header class="hero border-bottom">
+      <div class="container-xxl py-5">
+        <div class="row align-items-center gy-5 gx-4 gx-lg-5">
+          <div class="col-lg-7">
+            <div class="eyebrow mb-4">
+              <span class="status-dot"></span> YOUR NEXT PROJECT STARTS HERE
+            </div>
+            <h1>
+              Less setup.<br />More <span class="text-primary">building.</span>
+            </h1>
+            <p class="hero-description mt-4">
+              A clean foundation for your next website. Explore the building
+              blocks, make them your own, and bring your ideas to life.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a href="#components" class="btn btn-primary px-4"
+                >Explore components <span aria-hidden="true">↓</span></a
+              ><a href="#getting-started" class="btn btn-white px-4"
+                >Get started <span aria-hidden="true">↗</span></a
+              >
+            </div>
+            <div class="d-flex flex-wrap gap-4 small text-secondary mt-4">
+              <span>✓ Bootstrap 5.3.8</span><span>✓ Responsive by default</span
+              ><span>✓ No build step</span>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="preview-window">
+              <div class="preview-toolbar">
+                <span></span><span></span><span></span
+                ><small class="ms-auto">your-next-project.html</small>
+              </div>
+              <div class="p-4 p-sm-5">
+                <span
+                  class="badge rounded-pill bg-primary-subtle text-primary mb-3"
+                  >Made to be yours</span
+                >
+                <h2 class="h3 fw-bold">
+                  Small pieces.<br />Endless possibilities.
+                </h2>
+                <p class="text-secondary small">
+                  Everything you need to go from a blank page to something
+                  great.
+                </p>
+                <div class="d-flex gap-2 my-4">
+                  <span class="swatch bg-primary"></span
+                  ><span class="swatch swatch-lilac"></span
+                  ><span class="swatch swatch-peach"></span
+                  ><span class="swatch swatch-mint"></span>
+                </div>
+                <div class="d-flex justify-content-between small mb-2">
+                  <span>Ready to build</span><strong>100%</strong>
+                </div>
+                <div
+                  class="progress"
+                  role="progressbar"
+                  aria-label="Starter readiness"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  style="height: 6px"
+                >
+                  <div class="progress-bar w-100"></div>
+                </div>
+              </div>
+              <div class="preview-bottom">
+                <span class="status-dot"></span> All systems ready
+                <span class="ms-auto">&lt;/&gt;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container-xxl">
+      <div class="row gx-xl-5">
+        <aside class="col-lg-2 d-none d-lg-block border-end">
+          <div class="sidebar">
+            <div class="eyebrow mb-3">THE TOOLKIT</div>
+            <nav
+              id="sectionNav"
+              class="nav nav-pills flex-column gap-1"
+              aria-label="Component sections"
+            >
+              <a class="nav-link" href="#getting-started">Getting started</a
+              ><a class="nav-link" href="#components">Buttons & badges</a
+              ><a class="nav-link" href="#content">Cards & content</a
+              ><a class="nav-link" href="#navigation">Navigation</a
+              ><a class="nav-link" href="#forms">Forms & inputs</a
+              ><a class="nav-link" href="#feedback">Feedback</a
+              ><a class="nav-link" href="#interactive">Interactive</a
+              ><a class="nav-link" href="#layout">Layout & utilities</a>
+            </nav>
+            <div class="sidebar-note mt-5">
+              <span class="badge text-bg-light border mb-2"
+                >HTML + CSS + JS</span
+              >
+              <p class="small text-secondary mb-0">
+                Simple by design.<br />Ready for your ideas.
+              </p>
+            </div>
+          </div>
+        </aside>
+        <main id="main" class="col-lg-10 py-5">
+          <section id="getting-started" class="showcase-section">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow">01 / THE FOUNDATION</div>
+                <h2>Start with the essentials</h2>
+                <p>Open the page. Pick a component. Make it yours.</p>
+              </div>
+              <span class="badge version-badge">v5.3.8</span>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="intro-card">
+                  <span class="step-number">01</span>
+                  <h3 class="h6 mt-3">Open & explore</h3>
+                  <p>
+                    Open index.html in your browser. Everything is ready to use.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="intro-card">
+                  <span class="step-number">02</span>
+                  <h3 class="h6 mt-3">Choose your blocks</h3>
+                  <p>
+                    Find live examples below and reuse their HTML in your
+                    project.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="intro-card">
+                  <span class="step-number">03</span>
+                  <h3 class="h6 mt-3">Make it your own</h3>
+                  <p>
+                    Change colors, add your content, and build something new.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Each demo is ordinary HTML you can copy into your own page. -->
+          <section id="components" class="showcase-section">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow">02 / EVERYDAY ESSENTIALS</div>
+                <h2>Buttons & badges</h2>
+                <p>Small elements that move things forward.</p>
+              </div>
+              <span class="section-tag">Basics</span>
+            </div>
+            <div class="demo-panel">
+              <div class="demo-label">BUTTON VARIANTS</div>
+              <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="btn btn-primary">Primary</button
+                ><button type="button" class="btn btn-secondary">
+                  Secondary</button
+                ><button type="button" class="btn btn-success">Success</button
+                ><button type="button" class="btn btn-danger">Danger</button
+                ><button type="button" class="btn btn-warning">Warning</button
+                ><button type="button" class="btn btn-info">Info</button
+                ><button type="button" class="btn btn-light">Light</button
+                ><button type="button" class="btn btn-dark">Dark</button
+                ><button type="button" class="btn btn-link">Link</button>
+              </div>
+              <hr />
+              <div class="demo-label">OUTLINES & SIZES</div>
+              <div class="d-flex flex-wrap align-items-center gap-2">
+                <button type="button" class="btn btn-outline-primary">
+                  Outline primary</button
+                ><button type="button" class="btn btn-outline-secondary">
+                  Outline secondary</button
+                ><button type="button" class="btn btn-primary btn-sm">
+                  Small</button
+                ><button type="button" class="btn btn-primary btn-lg">
+                  Large</button
+                ><button type="button" class="btn btn-primary" disabled>
+                  Disabled
+                </button>
+              </div>
+            </div>
+            <div class="row g-3 mt-0">
+              <div class="col-md-6">
+                <div class="demo-panel h-100">
+                  <div class="demo-label">BUTTON GROUP</div>
+                  <div
+                    class="btn-group"
+                    role="group"
+                    aria-label="Example view selector"
+                  >
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="view"
+                      id="viewDay"
+                      checked
+                    /><label class="btn btn-outline-primary" for="viewDay"
+                      >Day</label
+                    ><input
+                      type="radio"
+                      class="btn-check"
+                      name="view"
+                      id="viewWeek"
+                    /><label class="btn btn-outline-primary" for="viewWeek"
+                      >Week</label
+                    ><input
+                      type="radio"
+                      class="btn-check"
+                      name="view"
+                      id="viewMonth"
+                    /><label class="btn btn-outline-primary" for="viewMonth"
+                      >Month</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="demo-panel h-100">
+                  <div class="demo-label">BADGES</div>
+                  <div class="d-flex flex-wrap gap-2 align-items-center">
+                    <span class="badge text-bg-primary">New</span
+                    ><span class="badge rounded-pill text-bg-success"
+                      >Published</span
+                    ><span class="badge rounded-pill text-bg-warning"
+                      >In progress</span
+                    ><span class="badge text-bg-light border">Draft</span
+                    ><span class="badge text-bg-dark"
+                      >Updates
+                      <span class="badge text-bg-light ms-1">4</span></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="content" class="showcase-section">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow">03 / A PLACE FOR YOUR CONTENT</div>
+                <h2>Cards & content</h2>
+                <p>Give your ideas a little structure.</p>
+              </div>
+              <span class="section-tag">Content</span>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <article class="card h-100">
+                  <div
+                    class="card-art"
+                    role="img"
+                    aria-label="Abstract lavender circles and geometric shapes"
+                  >
+                    <div class="art-circle"></div>
+                    <div class="art-square"></div>
+                    <span class="art-caption">CREATE SOMETHING GREAT.</span>
+                  </div>
+                  <div class="card-body p-4">
+                    <span class="eyebrow text-primary"
+                      >THE POSSIBILITIES ARE OPEN</span
+                    >
+                    <h3 class="h5 mt-2">Your next big idea</h3>
+                    <p class="text-secondary small">
+                      A flexible card with a visual, supporting text, and a
+                      clear next step.
+                    </p>
+                    <a class="btn btn-primary btn-sm" href="#layout"
+                      >Explore the layout ↗</a
+                    >
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100">
+                  <div class="card-header bg-white py-3 fw-semibold">
+                    Project checklist
+                    <span class="badge text-bg-primary float-end">3 steps</span>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item py-3">
+                      <span class="text-success me-2">✓</span> Set up your
+                      foundation
+                    </li>
+                    <li class="list-group-item py-3">
+                      <span class="text-success me-2">✓</span> Explore the
+                      components
+                    </li>
+                    <li class="list-group-item py-3">
+                      <span class="text-secondary me-2">○</span> Add your
+                      personal touch
+                    </li>
+                  </ul>
+                  <div class="card-body">
+                    <div class="demo-label">PLACEHOLDER / LOADING STATE</div>
+                    <p class="placeholder-glow mb-0" aria-hidden="true">
+                      <span class="placeholder col-7"></span>
+                      <span class="placeholder col-4"></span>
+                      <span class="placeholder col-5"></span>
+                      <span class="placeholder col-6"></span>
+                    </p>
+                    <span class="visually-hidden"
+                      >Example loading placeholder</span
+                    >
+                  </div>
+                  <div class="card-footer text-secondary small py-3">
+                    A little progress, every day.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="demo-panel mt-3">
+              <div class="demo-label">CAROUSEL</div>
+              <div id="demoCarousel" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#demoCarousel"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button
+                  ><button
+                    type="button"
+                    data-bs-target="#demoCarousel"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button
+                  ><button
+                    type="button"
+                    data-bs-target="#demoCarousel"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                </div>
+                <div class="carousel-inner rounded">
+                  <div class="carousel-item active">
+                    <div class="slide-art slide-one">
+                      <span class="eyebrow">01 / IMAGINE</span>
+                      <h3>Start with a possibility.</h3>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="slide-art slide-two">
+                      <span class="eyebrow">02 / CREATE</span>
+                      <h3>Make space for your ideas.</h3>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="slide-art slide-three">
+                      <span class="eyebrow">03 / SHIP</span>
+                      <h3>Put something good out there.</h3>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#demoCarousel"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span
+                  ><span class="visually-hidden">Previous</span></button
+                ><button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#demoCarousel"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span
+                  ><span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </section>
+          <section id="navigation" class="showcase-section">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow">04 / FIND YOUR WAY</div>
+                <h2>Navigation</h2>
+                <p>Help people get where they want to go.</p>
+              </div>
+            </div>
+            <div class="demo-panel">
+              <div class="demo-label">BREADCRUMB</div>
+              <nav aria-label="Example breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="#getting-started">Home</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="#components">Components</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Navigation
+                  </li>
+                </ol>
+              </nav>
+              <hr />
+              <div class="demo-label">TABS</div>
+              <ul class="nav nav-tabs" id="demoTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="overview-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#overview-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="overview-pane"
+                    aria-selected="true"
+                  >
+                    Overview
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="details-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#details-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="details-pane"
+                    aria-selected="false"
+                  >
+                    Details
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="resources-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#resources-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="resources-pane"
+                    aria-selected="false"
+                  >
+                    Resources
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content pt-3">
+                <div
+                  class="tab-pane fade show active"
+                  id="overview-pane"
+                  role="tabpanel"
+                  aria-labelledby="overview-tab"
+                  tabindex="0"
+                >
+                  One space for your content. Switch tabs to explore.
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="details-pane"
+                  role="tabpanel"
+                  aria-labelledby="details-tab"
+                  tabindex="0"
+                >
+                  Tabs organize related information without leaving the page.
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="resources-pane"
+                  role="tabpanel"
+                  aria-labelledby="resources-tab"
+                  tabindex="0"
+                >
+                  <a
+                    href="https://getbootstrap.com/docs/5.3/components/navs-tabs/"
+                    >Read the Bootstrap tabs documentation ↗</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="row g-3 mt-0">
+              <div class="col-md-6">
+                <div class="demo-panel h-100">
+                  <div class="demo-label">DROPDOWN</div>
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-outline-secondary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Jump to a section
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#forms"
+                          >Forms & inputs</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#feedback">Feedback</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a class="dropdown-item" href="#layout"
+                          >Layout & utilities</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="demo-panel h-100">
+                  <div class="demo-label">PAGINATION</div>
+                  <nav aria-label="Example content pages">
+                    <ul class="pagination mb-2" id="demoPagination">
+                      <li class="page-item active">
+                        <button
+                          class="page-link"
+                          aria-current="page"
+                          type="button"
+                          data-page="1"
+                        >
+                          1
+                        </button>
+                      </li>
+                      <li class="page-item">
+                        <button class="page-link" type="button" data-page="2">
+                          2
+                        </button>
+                      </li>
+                      <li class="page-item">
+                        <button class="page-link" type="button" data-page="3">
+                          3
+                        </button>
+                      </li>
+                    </ul>
+                  </nav>
+                  <p
+                    class="small text-secondary mb-0"
+                    id="pageStatus"
+                    aria-live="polite"
+                  >
+                    Page 1 — Start with the basics.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="small text-secondary mt-3">
+              The top bar demonstrates a responsive navbar. The section sidebar
+              uses pills and Scrollspy to follow your place on the page.
+            </p>
+          </section>
+          <!-- A local-only form: native constraints are surfaced with Bootstrap validation. -->
+          <section id="forms" class="showcase-section">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow">05 / START A CONVERSATION</div>
+                <h2>Forms & inputs</h2>
+                <p>
+                  Thoughtful inputs, from the first field to the final click.
+                </p>
+              </div>
+              <span class="section-tag">Forms</span>
+            </div>
+            <div class="demo-panel">
+              <form id="exampleForm" class="needs-validation" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="fullName" class="form-label"
+                      >Full name
+                      <span class="text-secondary">(required)</span></label
+                    ><input
+                      class="form-control"
+                      id="fullName"
+                      name="name"
+                      autocomplete="name"
+                      placeholder="Alex Morgan"
+                      required
+                    />
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label"
+                      >Email address
+                      <span class="text-secondary">(required)</span></label
+                    ><input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      autocomplete="email"
+                      placeholder="alex@example.com"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Please enter a valid email address.
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="input-group">
+                      <span class="input-group-text" id="usernamePrefix">@</span
+                      ><input
+                        id="username"
+                        class="form-control"
+                        name="username"
+                        placeholder="alexmorgan"
+                        aria-describedby="usernamePrefix"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="projectType" class="form-label"
+                      >Project type</label
+                    ><select
+                      id="projectType"
+                      class="form-select"
+                      name="project"
+                    >
+                      <option value="">Choose a project</option>
+                      <option>Personal website</option>
+                      <option>Business website</option>
+                      <option>Portfolio</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        placeholder="Tell us about your idea"
+                        id="message"
+                        name="message"
+                        style="height: 110px"
+                      ></textarea
+                      ><label for="message">Tell us about your idea</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="attachment">File input</label
+                    ><input
+                      class="form-control"
+                      type="file"
+                      id="attachment"
+                      aria-describedby="fileHelp"
+                    />
+                    <div id="fileHelp" class="form-text">
+                      Demo only. Your file is never uploaded.
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="confidence"
+                      >Idea readiness:
+                      <output id="rangeValue" for="confidence">50</output
+                      >%</label
+                    ><input
+                      type="range"
+                      class="form-range"
+                      id="confidence"
+                      min="0"
+                      max="100"
+                      value="50"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <fieldset>
+                      <legend class="h6">Preferred contact</legend>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="contact"
+                          id="contactEmail"
+                          value="email"
+                          checked
+                        /><label class="form-check-label" for="contactEmail"
+                          >Email</label
+                        >
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="contact"
+                          id="contactPhone"
+                          value="phone"
+                        /><label class="form-check-label" for="contactPhone"
+                          >Phone</label
+                        >
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        id="updates"
+                      /><label class="form-check-label" for="updates"
+                        >Send me project updates</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="demoConsent"
+                        required
+                      /><label class="form-check-label" for="demoConsent"
+                        >I understand this is a demo form.</label
+                      >
+                      <div class="invalid-feedback">
+                        Please confirm before submitting.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex flex-wrap gap-3 align-items-center">
+                    <button class="btn btn-primary" type="submit">
+                      Submit example ↗</button
+                    ><button class="btn btn-outline-secondary" type="reset">
+                      Reset</button
+                    ><span class="small text-secondary"
+                      >Just a demo. Nothing is sent or saved.</span
+                    >
+                  </div>
+                </div>
+                <div
+                  id="formResult"
+                  class="alert alert-success mt-3 mb-0 d-none"
+                  role="status"
+                >
+                  Looking good! Your example passed validation. No data was
+                  sent.
+                </div>
+              </form>
+            </div>
+          </section>
+          <section id="feedback" class="showcase-section">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow">06 / KEEP PEOPLE IN THE LOOP</div>
+                <h2>Feedback & status</h2>
+                <p>A little clarity makes a big difference.</p>
+              </div>
+            </div>
+            <div class="demo-panel">
+              <div class="demo-label">ALERTS</div>
+              <div class="alert alert-primary" role="alert">
+                <strong>A fresh start.</strong> Your foundation is ready to
+                customize.
+              </div>
+              <div
+                class="alert alert-success alert-dismissible fade show"
+                role="alert"
+              >
+                <strong>All set!</strong> This is a dismissible success
+                alert.<button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close success alert"
+                ></button>
+              </div>
+              <div class="alert alert-warning mb-0" role="alert">
+                <strong>A quick heads-up.</strong> Remember to replace the
+                example content.
+              </div>
+            </div>
+            <div class="row g-3 mt-0">
+              <div class="col-md-6">
+                <div class="demo-panel h-100">
+                  <div class="demo-label">PROGRESS & SPINNERS</div>
+                  <div class="d-flex justify-content-between small mb-2">
+                    <span>Project progress</span><span>65%</span>
+                  </div>
+                  <div
+                    class="progress mb-4"
+                    role="progressbar"
+                    aria-label="Example project progress"
+                    aria-valuenow="65"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    <div
+                      class="progress-bar progress-bar-striped"
+                      style="width: 65%"
+                    ></div>
+                  </div>
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="spinner-border text-primary" role="status">
+                      <span class="visually-hidden">Loading example</span>
+                    </div>
+                    <div class="spinner-grow text-primary" role="status">
+                      <span class="visually-hidden">Loading example</span>
+                    </div>
+                    <span class="small text-secondary"
+                      >Good things take a moment.</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="demo-panel h-100">
+                  <div class="demo-label">TOAST NOTIFICATION</div>
+                  <h3 class="h6">A message at just the right time.</h3>
+                  <p class="small text-secondary">
+                    A lightweight notification that appears without interrupting
+                    your flow.
+                  </p>
+                  <button
+                    class="btn btn-outline-primary"
+                    id="showToast"
+                    type="button"
+                  >
+                    Show toast
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="interactive" class="showcase-section">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow">07 / A LITTLE INTERACTION</div>
+                <h2>Click. Reveal. Explore.</h2>
+                <p>Working components that bring the page to life.</p>
+              </div>
+            </div>
+            <div class="demo-panel">
+              <div class="demo-label">MODAL, OFFCANVAS & CONTEXT</div>
+              <div class="d-flex flex-wrap gap-2">
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#demoModal"
+                >
+                  Open modal</button
+                ><button
+                  class="btn btn-outline-primary"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#demoOffcanvas"
+                  aria-controls="demoOffcanvas"
+                >
+                  Open offcanvas</button
+                ><button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="A little extra context, right where you need it."
+                >
+                  Tooltip on hover or focus</button
+                ><button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  data-bs-toggle="popover"
+                  data-bs-title="Hello, curious person."
+                  data-bs-content="Popovers give you a little more room for helpful information. Click again to close."
+                >
+                  Toggle popover
+                </button>
+              </div>
+              <hr />
+              <div class="demo-label">COLLAPSE</div>
+              <button
+                class="btn btn-sm btn-outline-dark"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#demoCollapse"
+                aria-expanded="false"
+                aria-controls="demoCollapse"
+              >
+                Reveal a little more ↓
+              </button>
+              <div class="collapse" id="demoCollapse">
+                <div class="p-3 bg-light rounded mt-3">
+                  Here’s the extra detail. Collapse keeps secondary content
+                  close by until it’s needed.
+                </div>
+              </div>
+            </div>
+            <div class="demo-panel mt-3">
+              <div class="demo-label">ACCORDION</div>
+              <div class="accordion" id="demoAccordion">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqOne"
+                      aria-expanded="true"
+                      aria-controls="faqOne"
+                    >
+                      How do I get started?
+                    </button>
+                  </h3>
+                  <div
+                    id="faqOne"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#demoAccordion"
+                  >
+                    <div class="accordion-body">
+                      Open <code>index.html</code> in your browser, then edit
+                      the HTML to make this starter your own. Bootstrap loads
+                      from a CDN, so you’ll need an internet connection.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqTwo"
+                      aria-expanded="false"
+                      aria-controls="faqTwo"
+                    >
+                      Can I customize the styling?
+                    </button>
+                  </h3>
+                  <div
+                    id="faqTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#demoAccordion"
+                  >
+                    <div class="accordion-body">
+                      Yes. Edit the design tokens and component styles in
+                      <code>assets/css/styles.css</code>. Keep only the examples
+                      you need.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqThree"
+                      aria-expanded="false"
+                      aria-controls="faqThree"
+                    >
+                      Do I need a build tool?
+                    </button>
+                  </h3>
+                  <div
+                    id="faqThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#demoAccordion"
+                  >
+                    <div class="accordion-body">
+                      No. This starter is plain HTML, CSS, and JavaScript. You
+                      can also serve it with any static web server.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="layout" class="showcase-section mb-0">
+            <div class="section-heading">
+              <div>
+                <div class="eyebrow">08 / PUT IT ALL TOGETHER</div>
+                <h2>Layout & utilities</h2>
+                <p>A responsive system that gives everything its place.</p>
+              </div>
+            </div>
+            <div class="demo-panel">
+              <div class="demo-label">RESPONSIVE GRID</div>
+              <div class="row g-3 text-center">
+                <div class="col-12 col-md-8">
+                  <div class="grid-block">.col-12 .col-md-8</div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="grid-block">.col-12 .col-md-4</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="grid-block">.col-6 .col-md-4</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="grid-block">.col-6 .col-md-4</div>
+                </div>
+                <div class="col-12 col-md-4">
+                  <div class="grid-block">.col-12 .col-md-4</div>
+                </div>
+              </div>
+              <p class="small text-secondary mt-3 mb-0">
+                Resize your browser to see the columns adapt.
+              </p>
+            </div>
+            <div class="row g-3 mt-0">
+              <div class="col-md-6">
+                <div class="demo-panel h-100">
+                  <div class="demo-label">TYPOGRAPHY</div>
+                  <h3 class="display-6">Make a statement.</h3>
+                  <p class="lead">Let your content breathe.</p>
+                  <p class="small text-secondary">
+                    Small, muted text for the supporting details.
+                  </p>
+                  <blockquote
+                    class="blockquote border-start border-primary border-3 ps-3 mb-0"
+                  >
+                    <p class="fs-6 mb-0">
+                      “Great things start with a solid foundation.”
+                    </p>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="demo-panel h-100">
+                  <div class="demo-label">SPACING, COLOR & FLEX</div>
+                  <div
+                    class="d-flex justify-content-between align-items-center gap-2 p-3 bg-primary-subtle text-primary rounded border"
+                  >
+                    <span>Flex layout</span
+                    ><span class="badge text-bg-primary">Aligned</span>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span
+                      class="p-2 bg-success-subtle text-success rounded small"
+                      >Success</span
+                    ><span
+                      class="p-2 bg-warning-subtle text-warning-emphasis rounded small"
+                      >Warning</span
+                    ><span
+                      class="p-2 bg-danger-subtle text-danger rounded small"
+                      >Danger</span
+                    >
+                  </div>
+                  <p class="small text-secondary mt-3 mb-0">
+                    <span class="d-none d-md-inline"
+                      >This sentence is visible on medium screens and
+                      larger.</span
+                    ><span class="d-md-none"
+                      >This sentence is visible on small screens.</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="demo-panel mt-3">
+              <div class="demo-label">RESPONSIVE TABLE</div>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <caption>
+                    Example project list
+                  </caption>
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col">Project</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Status</th>
+                      <th scope="col" class="text-end">Progress</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Personal portfolio</th>
+                      <td>Website</td>
+                      <td>
+                        <span class="badge text-bg-success">Published</span>
+                      </td>
+                      <td class="text-end">100%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Studio landing page</th>
+                      <td>Marketing</td>
+                      <td>
+                        <span class="badge text-bg-warning">In progress</span>
+                      </td>
+                      <td class="text-end">65%</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">The next big thing</th>
+                      <td>Experiment</td>
+                      <td>
+                        <span class="badge text-bg-light border">Draft</span>
+                      </td>
+                      <td class="text-end">10%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="demo-panel mt-3">
+              <div class="demo-label">RESPONSIVE IMAGE & FIGURE</div>
+              <figure class="figure mb-0 w-100">
+                <img
+                  class="figure-img img-fluid rounded w-100"
+                  src="assets/landscape.svg"
+                  width="1000"
+                  height="260"
+                  alt="An abstract landscape of purple hills beneath a peach sun"
+                  loading="lazy"
+                />
+                <figcaption class="figure-caption">
+                  A local SVG illustration with Bootstrap’s responsive image and
+                  figure classes.
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <footer class="border-top py-4">
+      <div
+        class="container-xxl d-flex flex-wrap justify-content-between gap-3 align-items-center"
+      >
+        <a class="text-dark text-decoration-none fw-bold" href="#"
+          >foundation<span class="brand-dot">/</span></a
+        ><span class="small text-secondary"
+          >A starting point for something great. Built with Bootstrap.</span
+        ><a class="small text-secondary" href="#getting-started"
+          >Back to top ↑</a
+        >
+      </div>
+    </footer>
+    <!-- Overlays live outside the page layout to avoid clipping and stacking issues. -->
+    <div
+      class="modal fade"
+      id="demoModal"
+      tabindex="-1"
+      aria-labelledby="modalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="modalTitle">
+              Room for a focused moment
+            </h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Use a modal for a short task or an important detail. This example
+            supports keyboard navigation and Escape to close.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close</button
+            ><button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Got it
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="demoOffcanvas"
+      aria-labelledby="offcanvasTitle"
+    >
+      <div class="offcanvas-header">
+        <h2 class="offcanvas-title h5" id="offcanvasTitle">
+          A little extra space
+        </h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <p>
+          Offcanvas panels are useful for filters, extra details, or mobile
+          navigation.
+        </p>
+        <div class="p-3 bg-primary-subtle rounded">
+          Your main content stays right where you left it.
+        </div>
+      </div>
+    </div>
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div id="demoToast" class="toast" role="status" aria-atomic="true">
+        <div class="toast-header">
+          <span class="status-dot me-2"></span
+          ><strong class="me-auto">Foundation</strong><small>Just now</small
+          ><button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close notification"
+          ></button>
+        </div>
+        <div class="toast-body">
+          You’re all set. Keep building something great.
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
