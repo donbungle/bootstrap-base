@@ -56,3 +56,13 @@ Reference: https://plotly.com/javascript/ and https://github.com/plotly/plotly.j
 Primary maps to corporate blue (`#0014A7`), secondary to medium blue (`#2D4BFF`), success to financial green (`#00B250`), info to cyan (`#00C2FF`), warning to amber (`#FFB000`), and danger to red (`#E53935`). All palette colors are also exposed as `--tanner-*` variables. Subtle backgrounds, borders, hover, and active shades are derived from those colors; bright buttons and badges use dark text for legibility.
 
 The light theme covers Bootstrap utilities, button variants, alerts, contextual tables/list groups, navigation, forms, progress, and overlay surfaces. It also updates the starter's main accents. Plotly series colors and decorative illustrations remain defined in their own assets. No Sass build is required.
+
+## Font Awesome icon gallery
+
+Open `icons.html` or choose **Icons** in the navigation to explore **60 examples** across Essentials, Treatments, Information, Actions, Motion & transforms, and Promotional cards. Search or filter the collection, follow an example's direct link, and expand **View HTML** for reusable markup.
+
+The page pins **Font Awesome Free 6.7.2** (Solid, Regular, and Brands) via jsDelivr. No paid kit or API key is required. Internet access is required for its CSS and webfonts; for offline use, download the package's CSS and webfonts together, preserving their relative paths. Decorative icons are hidden from assistive technology, while visible text or button labels supply their meaning. Text and source examples remain available if icon loading fails.
+
+`assets/css/icons.css` contains gallery treatments; `assets/js/icons.js` provides filters, demo controls, download/copy actions, and motion controls. Load `tanner.css` last for the shared palette. Animations are paused by default, can be toggled globally, and respect reduced-motion preferences. Promotional actions only show local previews; no purchase, subscription, or outbound message occurs. Save/like/view states last only until reload. Copying HTML alone does not include the custom CSS or the JavaScript handlers shown in this gallery.
+
+Reference: https://docs-v6.fontawesome.com/web/style/styling
