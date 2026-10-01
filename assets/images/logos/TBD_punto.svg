@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="3300" height="2048"
+     viewBox="0 0 3300 2048">
+  <title>Isotipo principal con punto verde</title>
+
+  <!-- Isotipo original -->
+  <rect x="0" y="0" width="2048" height="595"
+        rx="150" ry="150" fill="#0014A7"/>
+
+  <rect x="0" y="994" width="1094" height="1054"
+        rx="150" ry="150" fill="#0014A7"/>
+
+  <rect x="1490" y="994" width="558" height="1054"
+        rx="150" ry="150" fill="#0014A7"/>
+
+  <!-- Punto verde ampliado -->
+  <circle cx="2800" cy="1550" r="500" fill="#00B250"/>
+</svg>

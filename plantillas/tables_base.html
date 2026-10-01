@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="24 Bootstrap table examples: striped, bordered, compact, dark, comparison, invoice, heatmap, sticky headers, and more."
+    />
+    <title>Table gallery — Foundation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/tables.css" rel="stylesheet" />
+    <!-- Palette overrides must load after all other stylesheets. -->
+    <link href="../assets/css/tanner.css" rel="stylesheet" />
+    <style>
+        body { background:#f4f6fa; font-size:.9rem; }
+        .navbar-pulso { background:#002856; }
+        .navbar-pulso .navbar-brand { font-weight:700; font-size:1.15rem; letter-spacing:.02em; }
+        .navbar-pulso .navbar-text { font-size:.8rem; }
+        .kpi-card { border:0; border-radius:.5rem; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+        .kpi-icon { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; font-weight:700; }
+        .kpi-val { font-size:1.6rem; font-weight:800; line-height:1; }
+        .section-title { font-weight:700; }
+        .section-sub { color:#2e8b57; font-weight:600; }
+        .table-pulso thead th { background:#002856; color:#fff; vertical-align:middle; font-weight:600; font-size:.8rem; border:1px solid #002856; }
+        .table-pulso thead .col-stock { background:#003a75; }
+        .table-pulso thead .col-nuevos { background:#1e8e4e; }
+        .table-pulso thead .col-activados { background:#5cb85c; }
+        .table-pulso thead .col-desactivados { background:#f0ad00; }
+        .table-pulso thead .col-fugados { background:#d9534f; }
+        .table-pulso thead .col-meta { background:#2a9fd8; }
+        .table-pulso tbody tr.total-row { background:#dce6f5 !important; font-weight:700; }
+        .text-nuevo { color:#1e8e4e; font-weight:600; }
+        .text-activado { color:#5cb85c; font-weight:600; }
+        .text-desactivado { color:#e0a800; font-weight:600; }
+        .text-fugado { color:#d9534f; font-weight:600; }
+        .def-card { border:0; border-left:5px solid; border-radius:.4rem; height:100%; }
+        .def-activo  { border-left-color:#2a9fd8; }
+        .def-nuevo   { border-left-color:#1e8e4e; }
+        .def-activado{ border-left-color:#5cb85c; }
+        .def-desact  { border-left-color:#f0ad00; }
+        .def-fugado  { border-left-color:#d9534f; }
+        .def-tipo { font-size:.72rem; font-weight:700; letter-spacing:.05em; }
+        footer { font-size:.78rem; color:#6c757d; }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar sticky-top bg-white border-bottom" aria-label="Main navigation">
+      <div class="container-xxl">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+          <img style="height: 40px;" src="../assets/images/logos/TBD_punto.svg " />
+          <span class="d-flex flex-column flex-wrap">
+            <span style="margin-bottom:-10px;color: var(--tanner-primary-green);"><span class="text-primary">Punto</span> Diario</span>
+            <span style="color: var(--tanner-text-primary);">Direcci&oacute;n Comercial</span>
+          </span>
+          </a>
+        <div class="d-flex align-items-center gap-3">
+          
+        </div>
+      </div>
+    </nav>
+    <header class="gallery-hero border-bottom">
+      <div class="container-xxl py-0">
+        <div class="row align-items-end g-4 mt-1">
+          <div class="col-lg-12">
+            <h1>
+              Resumen Consolidado Diario Stock 
+              <span style="font-size:1.5rem;" class="badge text-bg-primary">TSF + TBD</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main" class="container-xxl py-5">
+      <!-- ===================== KPIs ===================== -->
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div class="kpi-icon bg-primary-subtle text-primary">👥</div>
+            <div><div class="text-muted small">Clientes activos</div><div class="kpi-val text-primary">1.149</div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div class="kpi-icon bg-success-subtle text-success">↗</div>
+            <div><div class="text-muted small">Nuevos</div><div class="kpi-val text-success">+54</div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div class="kpi-icon bg-success-subtle text-success">✔</div>
+            <div><div class="text-muted small">Activados</div><div class="kpi-val text-success">+28</div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div class="kpi-icon bg-warning-subtle text-warning">👋</div>
+            <div><div class="text-muted small">Desactivados</div><div class="kpi-val text-warning">-16</div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div class="kpi-icon bg-danger-subtle text-danger">🚫</div>
+            <div><div class="text-muted small">Fugados</div><div class="kpi-val text-danger">-43</div></div>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- ===================== TABLA 1 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech align-middle mb-0">
+                  <thead>
+                      <tr>
+                          <th>Cliente</th>
+                          <th>Segmento</th>
+                          <th>Producto</th>
+                          <th class="text-end">Saldo</th>
+                          <th>Estado</th>
+                          <th>Actualización</th>
+                          <th class="text-end">Acciones</th>
+                      </tr>
+                  </thead>
+
+                  <tbody>
+                      <tr>
+                          <td>
+                              <div class="table-primary-text">
+                                  Empresa Andina S.A.
+                              </div>
+                              <small class="table-secondary-text">
+                                  ID 102349
+                              </small>
+                          </td>
+
+                          <td>Grandes Empresas</td>
+
+                          <td>Crédito Comercial</td>
+
+                          <td class="text-end table-number">
+                              $450.200.000
+                          </td>
+
+                          <td>
+                              <span class="status status-success">
+                                  Vigente
+                              </span>
+                          </td>
+
+                          <td>
+                              <span class="table-date">30/09/2026</span>
+                              <small class="d-block table-secondary-text">
+                                  07:30
+                              </small>
+                          </td>
+
+                          <td class="text-end">
+                              <button class="btn btn-table-action">
+                                  Ver detalle
+                              </button>
+                          </td>
+                      </tr>
+
+                      <tr>
+                          <td>
+                              <div class="table-primary-text">
+                                  Comercial Norte Ltda.
+                              </div>
+                              <small class="table-secondary-text">
+                                  ID 102350
+                              </small>
+                          </td>
+
+                          <td>Mediana Empresa</td>
+
+                          <td>Factoring</td>
+
+                          <td class="text-end table-number">
+                              $128.450.000
+                          </td>
+
+                          <td>
+                              <span class="status status-warning">
+                                  Observación
+                              </span>
+                          </td>
+
+                          <td>
+                              <span class="table-date">30/09/2026</span>
+                              <small class="d-block table-secondary-text">
+                                  07:28
+                              </small>
+                          </td>
+
+                          <td class="text-end">
+                              <button class="btn btn-table-action">
+                                  Ver detalle
+                              </button>
+                          </td>
+                      </tr>
+
+                      <tr>
+                          <td>
+                              <div class="table-primary-text">
+                                  Inversiones Pacífico SpA
+                              </div>
+                              <small class="table-secondary-text">
+                                  ID 102351
+                              </small>
+                          </td>
+
+                          <td>Corporativa</td>
+
+                          <td>Leasing</td>
+
+                          <td class="text-end table-number">
+                              $875.300.000
+                          </td>
+
+                          <td>
+                              <span class="status status-danger">
+                                  Vencido
+                              </span>
+                          </td>
+
+                          <td>
+                              <span class="table-date">29/09/2026</span>
+                              <small class="d-block table-secondary-text">
+                                  23:41
+                              </small>
+                          </td>
+
+                          <td class="text-end">
+                              <button class="btn btn-table-action">
+                                  Ver detalle
+                              </button>
+                          </td>
+                      </tr>
+
+                      <tr>
+                          <td>
+                              <div class="table-primary-text">
+                                  Servicios del Sur S.A.
+                              </div>
+                              <small class="table-secondary-text">
+                                  ID 102352
+                              </small>
+                          </td>
+
+                          <td>Mediana Empresa</td>
+
+                          <td>Comercio Exterior</td>
+
+                          <td class="text-end table-number">
+                              $320.800.000
+                          </td>
+
+                          <td>
+                              <span class="status status-info">
+                                  En revisión
+                              </span>
+                          </td>
+
+                          <td>
+                              <span class="table-date">30/09/2026</span>
+                              <small class="d-block table-secondary-text">
+                                  07:25
+                              </small>
+                          </td>
+
+                          <td class="text-end">
+                              <button class="btn btn-table-action">
+                                  Ver detalle
+                              </button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 1 ===================== -->
+
+
+      <!-- ===================== TABLA 2 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech table-corporate">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Segmento</th>
+                        <th>Producto</th>
+                        <th class="text-end">Saldo</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Empresa Andina</td>
+                        <td>Corporativa</td>
+                        <td>Crédito</td>
+                        <td class="text-end table-number">$450 MM</td>
+                    </tr>
+
+                    <tr>
+                        <td>Comercial Norte</td>
+                        <td>Mediana</td>
+                        <td>Factoring</td>
+                        <td class="text-end table-number">$128 MM</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 2 ===================== -->
+
+
+      <!-- ===================== TABLA 3 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech table-minimal">
+                <thead>
+                    <tr>
+                        <th>Operación</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th class="text-end">Monto</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>OP-10291</td>
+                        <td>Empresa A</td>
+                        <td>30/09/2026</td>
+                        <td class="text-end">$230 MM</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 3 ===================== -->
+
+
+      <!-- ===================== TABLA 4 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech table-status">
+                <thead>
+                    <tr>
+                        <th>Proceso</th>
+                        <th>Actualización</th>
+                        <th>Registros</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr class="row-success">
+                        <td>Cartera</td>
+                        <td>07:12</td>
+                        <td>1.245.382</td>
+                        <td>
+                            <span class="status status-success">
+                                Actualizado
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr class="row-warning">
+                        <td>Clientes</td>
+                        <td>06:58</td>
+                        <td>82.431</td>
+                        <td>
+                            <span class="status status-warning">
+                                Advertencia
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr class="row-danger">
+                        <td>Comisiones</td>
+                        <td>05:30</td>
+                        <td>—</td>
+                        <td>
+                            <span class="status status-danger">
+                                Error
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 4 ===================== -->
+
+       <!-- ===================== TABLA 5 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech table-kpi">
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th class="text-end">Actual</th>
+                        <th class="text-end">Anterior</th>
+                        <th class="text-end">Variación</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Cartera</td>
+                        <td class="kpi-value">$850.200 MM</td>
+                        <td>$810.300 MM</td>
+                        <td class="variation-up">+4,9%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Spread</td>
+                        <td class="kpi-value">3,82%</td>
+                        <td>3,91%</td>
+                        <td class="variation-down">-0,09 pp</td>
+                    </tr>
+
+                </tbody>
+            </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 5 ===================== -->
+
+      <!-- ===================== TABLA 6 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech table-ranking">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Cliente</th>
+                        <th>Participación</th>
+                        <th class="text-end">Cartera</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td class="rank">1</td>
+
+                        <td>Empresa Andina</td>
+
+                        <td>
+                            <div class="rank-bar">
+                                <div style="width: 92%"></div>
+                            </div>
+                        </td>
+
+                        <td class="text-end">
+                            $850 MM
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">2</td>
+
+                        <td>Grupo Pacífico</td>
+
+                        <td>
+                            <div class="rank-bar">
+                                <div style="width: 74%"></div>
+                            </div>
+                        </td>
+
+                        <td class="text-end">
+                            $680 MM
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 6 ===================== -->
+
+      <!-- ===================== TABLA 7 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech table-progress">
+
+                <thead>
+                    <tr>
+                        <th>Ejecutivo</th>
+                        <th>Meta</th>
+                        <th>Avance</th>
+                        <th class="text-end">Cumplimiento</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>María Pérez</td>
+
+                        <td>$500 MM</td>
+
+                        <td>
+                            <div class="progress fintech-progress">
+
+                                <div
+                                    class="progress-bar"
+                                    style="width: 87%">
+                                </div>
+
+                            </div>
+                        </td>
+
+                        <td class="text-end">
+                            <strong>87%</strong>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 7 ===================== -->
+
+      <!-- ===================== TABLA 8 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech table-comparison">
+
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th class="text-end">Ago</th>
+                        <th class="text-end">Sep</th>
+                        <th class="text-end">Δ</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Crédito Comercial</td>
+                        <td class="text-end">$850 MM</td>
+                        <td class="text-end">$920 MM</td>
+                        <td class="text-end variation-up">
+                            ▲ 8,2%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Factoring</td>
+                        <td class="text-end">$320 MM</td>
+                        <td class="text-end">$298 MM</td>
+                        <td class="text-end variation-down">
+                            ▼ 6,9%
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 8 ===================== -->
+
+      <!-- ===================== TABLA 9 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech table-alert">
+
+                <thead>
+                    <tr>
+                        <th>Severidad</th>
+                        <th>Control</th>
+                        <th>Tabla</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <span class="alert-dot danger"></span>
+                            Crítico
+                        </td>
+
+                        <td>Reconciliación cartera</td>
+
+                        <td>
+                            fact_cartera_snapshot
+                        </td>
+
+                        <td class="text-danger fw-semibold">
+                            FAILED
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span class="alert-dot warning"></span>
+                            Advertencia
+                        </td>
+
+                        <td>Volumen diario</td>
+
+                        <td>
+                            fact_operacion
+                        </td>
+
+                        <td class="text-warning fw-semibold">
+                            WARNING
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 9 ===================== -->
+
+      <!-- ===================== TABLA 10 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-fintech table-executive">
+
+                <thead>
+                    <tr>
+                        <th>Indicador</th>
+                        <th class="text-end">Resultado</th>
+                        <th class="text-end">Meta</th>
+                        <th class="text-end">Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <strong>Cartera Total</strong>
+                        </td>
+
+                        <td class="executive-value">
+                            $850.200 MM
+                        </td>
+
+                        <td class="text-end">
+                            $820.000 MM
+                        </td>
+
+                        <td class="text-end">
+                            <span class="status status-success">
+                                Cumple
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>Spread promedio</strong>
+                        </td>
+
+                        <td class="executive-value">
+                            3,82%
+                        </td>
+
+                        <td class="text-end">
+                            4,00%
+                        </td>
+
+                        <td class="text-end">
+                            <span class="status status-warning">
+                                Seguimiento
+                            </span>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 10 ===================== -->
+
+      <!-- ===================== TABLA N ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Cartera Comercial</h5>
+                  <small>Resumen de operaciones por cliente</small>
+              </div>
+
+              <button class="btn btn-primary btn-sm">
+                  Nueva operación
+              </button>
+          </div>
+
+          <div class="table-responsive">
+              
+          </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA N ===================== -->
+
+
+
+
+      <!-- ===================== DEFINICIONES ===================== -->
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h2 class="h5 section-title mb-0">Definiciones de las categorías</h2>
+        <span class="text-muted small">Conteo de RUT únicos · movimientos entre el cierre actual y el mes anterior.</span>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col-md">
+          <div class="card def-card def-activo"><div class="card-body">
+            <h6 class="fw-bold mb-1">Cliente activo</h6>
+            <div class="def-tipo text-primary mb-2">STOCK AL CIERRE</div>
+            <p class="small text-muted mb-0">RUT que cumple Stock TBD &gt; $0 (Stock TSF &gt; $0 y línea TBD). No es Pyme 1 y tiene stock consolidado (TSF + TBD) ≥ $10 MM para Banca Empresas o ≥ $30 MM para Grandes Empresas.</p>
+          </div></div>
+        </div>
+        <div class="col-md">
+          <div class="card def-card def-nuevo"><div class="card-body">
+            <h6 class="fw-bold mb-1">Nuevo</h6>
+            <div class="def-tipo text-success mb-2">ENTRADA DEL MES</div>
+            <p class="small text-muted mb-0">RUT que no estaba activo en el cierre anterior, si está activo en el actual y no registra una operación previa o su última operación ocurrió al menos 12 meses antes del cierre.</p>
+          </div></div>
+        </div>
+        <div class="col-md">
+          <div class="card def-card def-activado"><div class="card-body">
+            <h6 class="fw-bold mb-1">Activado</h6>
+            <div class="def-tipo text-success mb-2">ENTRADA DEL MES</div>
+            <p class="small text-muted mb-0">RUT que no estaba activo en el cierre anterior y sí está activo en el actual, pero no cumple la condición de Nuevo.</p>
+          </div></div>
+        </div>
+        <div class="col-md">
+          <div class="card def-card def-desact"><div class="card-body">
+            <h6 class="fw-bold mb-1">Desactivado</h6>
+            <div class="def-tipo text-warning mb-2">SALIDA DEL MES</div>
+            <p class="small text-muted mb-0">RUT activo en el cierre anterior que queda bajo el umbral de su unidad, con stock consolidado ≥ $1 MM. Se muestra en negativo.</p>
+          </div></div>
+        </div>
+        <div class="col-md">
+          <div class="card def-card def-fugado"><div class="card-body">
+            <h6 class="fw-bold mb-1">Fugado</h6>
+            <div class="def-tipo text-danger mb-2">SALIDA DEL MES</div>
+            <p class="small text-muted mb-0">RUT activo en el cierre anterior que mantiene activación válida y no es Pyme 1, pero su stock consolidado cae bajo $1 MM. Se muestra en negativo.</p>
+          </div></div>
+        </div>
+      </div>
+    </main>
+    <footer class="border-top py-4">
+      <div class="container-xxl d-flex flex-wrap justify-content-between gap-3">
+        <a class="fw-bold text-dark text-decoration-none" href="index.html"
+          >foundation<span class="brand-dot">/</span></a
+        ><span class="small text-secondary"
+          >24 formats. A foundation for your next dataset.</span
+        ><a href="#table-index" class="small">Back to collection ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>

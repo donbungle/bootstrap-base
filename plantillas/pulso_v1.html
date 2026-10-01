@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulso de Clientes Activos | División Empresas</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { background:#f4f6fa; font-size:.9rem; }
+  .navbar-pulso { background:#002856; }
+  .navbar-pulso .navbar-brand { font-weight:700; font-size:1.15rem; letter-spacing:.02em; }
+  .navbar-pulso .navbar-text { font-size:.8rem; }
+  .kpi-card { border:0; border-radius:.5rem; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+  .kpi-icon { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; font-weight:700; }
+  .kpi-val { font-size:1.6rem; font-weight:800; line-height:1; }
+  .section-title { font-weight:700; }
+  .section-sub { color:#2e8b57; font-weight:600; }
+  .table-pulso thead th { background:#002856; color:#fff; vertical-align:middle; font-weight:600; font-size:.8rem; border:1px solid #002856; }
+  .table-pulso thead .col-stock { background:#003a75; }
+  .table-pulso thead .col-nuevos { background:#1e8e4e; }
+  .table-pulso thead .col-activados { background:#5cb85c; }
+  .table-pulso thead .col-desactivados { background:#f0ad00; }
+  .table-pulso thead .col-fugados { background:#d9534f; }
+  .table-pulso thead .col-meta { background:#2a9fd8; }
+  .table-pulso tbody tr.total-row { background:#dce6f5 !important; font-weight:700; }
+  .text-nuevo { color:#1e8e4e; font-weight:600; }
+  .text-activado { color:#5cb85c; font-weight:600; }
+  .text-desactivado { color:#e0a800; font-weight:600; }
+  .text-fugado { color:#d9534f; font-weight:600; }
+  .def-card { border:0; border-left:5px solid; border-radius:.4rem; height:100%; }
+  .def-activo  { border-left-color:#2a9fd8; }
+  .def-nuevo   { border-left-color:#1e8e4e; }
+  .def-activado{ border-left-color:#5cb85c; }
+  .def-desact  { border-left-color:#f0ad00; }
+  .def-fugado  { border-left-color:#d9534f; }
+  .def-tipo { font-size:.72rem; font-weight:700; letter-spacing:.05em; }
+  footer { font-size:.78rem; color:#6c757d; }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<nav class="navbar navbar-dark navbar-pulso py-2">
+  <div class="container-fluid px-4">
+    <span class="navbar-brand">🏦 Pulso de Clientes Activos | División Empresas</span>
+    <div class="d-flex gap-4">
+      <span class="navbar-text text-white-50">Datos reales - cierre 28/09/2026</span>
+      <span class="navbar-text text-white-50 d-none d-md-inline">Stock consolidado TSF + TBD</span>
+    </div>
+  </div>
+</nav>
+
+<main class="container-fluid px-4 py-4">
+
+  <!-- ===================== KPIs ===================== -->
+  <div class="row g-3 mb-4">
+    <div class="col-6 col-md">
+      <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+        <div class="kpi-icon bg-primary-subtle text-primary">👥</div>
+        <div><div class="text-muted small">Clientes activos</div><div class="kpi-val text-primary">1.149</div></div>
+      </div></div>
+    </div>
+    <div class="col-6 col-md">
+      <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+        <div class="kpi-icon bg-success-subtle text-success">↗</div>
+        <div><div class="text-muted small">Nuevos</div><div class="kpi-val text-success">+54</div></div>
+      </div></div>
+    </div>
+    <div class="col-6 col-md">
+      <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+        <div class="kpi-icon bg-success-subtle text-success">✔</div>
+        <div><div class="text-muted small">Activados</div><div class="kpi-val text-success">+28</div></div>
+      </div></div>
+    </div>
+    <div class="col-6 col-md">
+      <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+        <div class="kpi-icon bg-warning-subtle text-warning">👋</div>
+        <div><div class="text-muted small">Desactivados</div><div class="kpi-val text-warning">-16</div></div>
+      </div></div>
+    </div>
+    <div class="col-6 col-md">
+      <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+        <div class="kpi-icon bg-danger-subtle text-danger">🚫</div>
+        <div><div class="text-muted small">Fugados</div><div class="kpi-val text-danger">-43</div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ===================== VISTA AGREGADA ===================== -->
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h2 class="h5 section-title mb-0">Vista agregada</h2>
+    <span class="section-sub small">1.149 activos · Δ mes +23</span>
+  </div>
+  <div class="table-responsive mb-4">
+    <table class="table table-striped table-pulso text-center align-middle mb-0">
+      <thead>
+        <tr>
+          <th rowspan="2">#</th>
+          <th rowspan="2" class="text-start">Unidad de negocio</th>
+          <th colspan="3" class="col-stock">Clientes activos</th>
+          <th colspan="4">Movimientos del mes</th>
+          <th colspan="2">Variación</th>
+        </tr>
+        <tr>
+          <th class="col-stock">Dic. 2025</th><th class="col-stock">Ago. 2026</th><th class="col-stock">Sep. 2026</th>
+          <th class="col-nuevos">Nuevos</th><th class="col-activados">Activados</th>
+          <th class="col-desactivados">Desactivados</th><th class="col-fugados">Fugados</th>
+          <th>Δ mes</th><th>Δ vs. dic.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="text-start">Banca Empresas</td><td>919</td><td>886</td><td>904</td><td class="text-nuevo">+44</td><td class="text-activado">+22</td><td class="text-desactivado">-16</td><td class="text-fugado">-32</td><td class="text-nuevo">+18</td><td>-15</td></tr>
+        <tr><td>2</td><td class="text-start">Grandes Empresas</td><td>183</td><td>240</td><td>245</td><td class="text-nuevo">+10</td><td class="text-activado">+6</td><td class="text-desactivado">0</td><td class="text-fugado">-11</td><td class="text-nuevo">+5</td><td class="text-nuevo">+62</td></tr>
+        <tr class="total-row"><td></td><td class="text-start">TOTAL</td><td>1.102</td><td>1.126</td><td>1.149</td><td class="text-nuevo">+54</td><td class="text-activado">+28</td><td class="text-desactivado">-16</td><td class="text-fugado">-43</td><td class="text-nuevo">+23</td><td class="text-nuevo">+47</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== BANCA EMPRESAS - ZONA ===================== -->
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h2 class="h5 section-title mb-0">Banca Empresas · resumen por zona</h2>
+    <span class="section-sub small">904 activos · Δ mes +18</span>
+  </div>
+  <div class="table-responsive mb-4">
+    <table class="table table-striped table-pulso text-center align-middle mb-0">
+      <thead>
+        <tr>
+          <th rowspan="2">#</th>
+          <th rowspan="2" class="text-start">Zona</th>
+          <th colspan="3" class="col-stock">Clientes activos</th>
+          <th colspan="4">Movimientos del mes</th>
+          <th colspan="2">Variación</th>
+        </tr>
+        <tr>
+          <th class="col-stock">Dic. 2025</th><th class="col-stock">Ago. 2026</th><th class="col-stock">Sep. 2026</th>
+          <th class="col-nuevos">Nuevos</th><th class="col-activados">Activados</th>
+          <th class="col-desactivados">Desactivados</th><th class="col-fugados">Fugados</th>
+          <th>Δ mes</th><th>Δ vs. dic.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="text-start">Norte</td><td>226</td><td>222</td><td>230</td><td class="text-nuevo">+10</td><td class="text-activado">+9</td><td class="text-desactivado">-2</td><td class="text-fugado">-9</td><td class="text-nuevo">+8</td><td class="text-nuevo">+4</td></tr>
+        <tr><td>2</td><td class="text-start">Sur</td><td>338</td><td>319</td><td>325</td><td class="text-nuevo">+15</td><td class="text-activado">+7</td><td class="text-desactivado">-4</td><td class="text-fugado">-12</td><td class="text-nuevo">+6</td><td>-13</td></tr>
+        <tr><td>3</td><td class="text-start">Metro</td><td>355</td><td>345</td><td>349</td><td class="text-nuevo">+19</td><td class="text-activado">+6</td><td class="text-desactivado">-10</td><td class="text-fugado">-11</td><td class="text-nuevo">+4</td><td>-6</td></tr>
+        <tr class="total-row"><td></td><td class="text-start">TOTAL</td><td>919</td><td>886</td><td>904</td><td class="text-nuevo">+44</td><td class="text-activado">+22</td><td class="text-desactivado">-16</td><td class="text-fugado">-32</td><td class="text-nuevo">+18</td><td>-15</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== BANCA EMPRESAS - SUCURSAL ===================== -->
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h2 class="h5 section-title mb-0">Banca Empresas · detalle por sucursal</h2>
+    <span class="section-sub small">904 activos · Δ mes +18</span>
+  </div>
+  <div class="table-responsive mb-4">
+    <table class="table table-striped table-pulso text-center align-middle mb-0">
+      <thead>
+        <tr>
+          <th rowspan="2">#</th>
+          <th rowspan="2" class="text-start">Sucursal</th>
+          <th colspan="3" class="col-stock">Clientes activos</th>
+          <th colspan="4">Movimientos del mes</th>
+          <th colspan="2">Variación</th>
+        </tr>
+        <tr>
+          <th class="col-stock">Dic. 2025</th><th class="col-stock">Ago. 2026</th><th class="col-stock">Sep. 2026</th>
+          <th class="col-nuevos">Nuevos</th><th class="col-activados">Activados</th>
+          <th class="col-desactivados">Desactivados</th><th class="col-fugados">Fugados</th>
+          <th>Δ mes</th><th>Δ vs. dic.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="text-start">Santa Elena</td><td>110</td><td>88</td><td>94</td><td class="text-nuevo">+7</td><td class="text-activado">+4</td><td class="text-desactivado">-2</td><td class="text-fugado">-3</td><td class="text-nuevo">+6</td><td>-16</td></tr>
+        <tr><td>2</td><td class="text-start">Puerto Montt</td><td>79</td><td>74</td><td>79</td><td class="text-nuevo">+4</td><td class="text-activado">+3</td><td class="text-desactivado">0</td><td class="text-fugado">-2</td><td class="text-nuevo">+5</td><td>0</td></tr>
+        <tr><td>3</td><td class="text-start">Huérfanos</td><td>65</td><td>81</td><td>85</td><td class="text-nuevo">+6</td><td class="text-activado">0</td><td class="text-desactivado">-2</td><td class="text-fugado">0</td><td class="text-nuevo">+4</td><td class="text-nuevo">+20</td></tr>
+        <tr><td>4</td><td class="text-start">Antofagasta</td><td>30</td><td>28</td><td>32</td><td class="text-nuevo">+3</td><td class="text-activado">+1</td><td class="text-desactivado">0</td><td class="text-fugado">0</td><td class="text-nuevo">+4</td><td class="text-nuevo">+2</td></tr>
+        <tr><td>5</td><td class="text-start">Iquique</td><td>24</td><td>24</td><td>27</td><td class="text-nuevo">+1</td><td class="text-activado">+2</td><td class="text-desactivado">0</td><td class="text-fugado">0</td><td class="text-nuevo">+3</td><td class="text-nuevo">+3</td></tr>
+        <tr><td>6</td><td class="text-start">Concepción</td><td>75</td><td>71</td><td>73</td><td class="text-nuevo">+2</td><td class="text-activado">+3</td><td class="text-desactivado">0</td><td class="text-fugado">-3</td><td class="text-nuevo">+2</td><td>-2</td></tr>
+        <tr><td>7</td><td class="text-start">Talca</td><td>45</td><td>57</td><td>59</td><td class="text-nuevo">+5</td><td class="text-activado">+1</td><td class="text-desactivado">-1</td><td class="text-fugado">-3</td><td class="text-nuevo">+2</td><td class="text-nuevo">+14</td></tr>
+        <tr><td>8</td><td class="text-start">La Serena</td><td>55</td><td>54</td><td>56</td><td class="text-nuevo">+2</td><td class="text-activado">+2</td><td class="text-desactivado">-1</td><td class="text-fugado">-1</td><td class="text-nuevo">+2</td><td class="text-nuevo">+1</td></tr>
+        <tr><td>9</td><td class="text-start">Chillán</td><td>50</td><td>43</td><td>44</td><td class="text-nuevo">+1</td><td class="text-activado">0</td><td class="text-desactivado">0</td><td class="text-fugado">0</td><td class="text-nuevo">+1</td><td>-6</td></tr>
+        <tr><td>10</td><td class="text-start">Viña del Mar</td><td>68</td><td>65</td><td>65</td><td class="text-nuevo">+3</td><td class="text-activado">+2</td><td class="text-desactivado">-1</td><td class="text-fugado">-4</td><td>0</td><td>-3</td></tr>
+        <tr><td>11</td><td class="text-start">Rancagua</td><td>49</td><td>51</td><td>50</td><td class="text-nuevo">+1</td><td class="text-activado">+2</td><td class="text-desactivado">0</td><td class="text-fugado">-4</td><td>-1</td><td class="text-nuevo">+1</td></tr>
+        <tr><td>12</td><td class="text-start">Temuco</td><td>31</td><td>30</td><td>29</td><td class="text-nuevo">+1</td><td class="text-activado">0</td><td class="text-desactivado">0</td><td class="text-fugado">-2</td><td>-1</td><td>-2</td></tr>
+        <tr><td>13</td><td class="text-start">Moneda</td><td>100</td><td>89</td><td>87</td><td class="text-nuevo">+2</td><td class="text-activado">+1</td><td class="text-desactivado">-1</td><td class="text-fugado">-4</td><td>-2</td><td>-13</td></tr>
+        <tr><td>14</td><td class="text-start">Valdivia</td><td>58</td><td>44</td><td>41</td><td class="text-nuevo">+2</td><td class="text-activado">0</td><td class="text-desactivado">-3</td><td class="text-fugado">-2</td><td>-3</td><td>-17</td></tr>
+        <tr><td>15</td><td class="text-start">Providencia</td><td>80</td><td>87</td><td>83</td><td class="text-nuevo">+4</td><td class="text-activado">+1</td><td class="text-desactivado">-5</td><td class="text-fugado">-4</td><td>-4</td><td class="text-nuevo">+3</td></tr>
+        <tr class="total-row"><td></td><td class="text-start">TOTAL</td><td>919</td><td>886</td><td>904</td><td class="text-nuevo">+44</td><td class="text-activado">+22</td><td class="text-desactivado">-16</td><td class="text-fugado">-32</td><td class="text-nuevo">+18</td><td>-15</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== GRANDES EMPRESAS ===================== -->
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h2 class="h5 section-title mb-0">Grandes Empresas · detalle por sucursal</h2>
+    <span class="section-sub small">245 activos · Δ mes +5</span>
+  </div>
+  <div class="table-responsive mb-4">
+    <table class="table table-striped table-pulso text-center align-middle mb-0">
+      <thead>
+        <tr>
+          <th rowspan="2">#</th>
+          <th rowspan="2" class="text-start">Sucursal</th>
+          <th colspan="3" class="col-stock">Clientes activos</th>
+          <th colspan="4">Movimientos del mes</th>
+          <th colspan="2">Variación</th>
+        </tr>
+        <tr>
+          <th class="col-stock">Dic. 2025</th><th class="col-stock">Ago. 2026</th><th class="col-stock">Sep. 2026</th>
+          <th class="col-nuevos">Nuevos</th><th class="col-activados">Activados</th>
+          <th class="col-desactivados">Desactivados</th><th class="col-fugados">Fugados</th>
+          <th>Δ mes</th><th>Δ vs. dic.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="text-start">Grandes Empresas 03</td><td>57</td><td>80</td><td>83</td><td class="text-nuevo">+5</td><td class="text-activado">0</td><td class="text-desactivado">0</td><td class="text-fugado">-2</td><td class="text-nuevo">+3</td><td class="text-nuevo">+26</td></tr>
+        <tr><td>2</td><td class="text-start">Grandes Empresas 01</td><td>57</td><td>71</td><td>74</td><td class="text-nuevo">+2</td><td class="text-activado">+4</td><td class="text-desactivado">0</td><td class="text-fugado">-3</td><td class="text-nuevo">+3</td><td class="text-nuevo">+17</td></tr>
+        <tr><td>3</td><td class="text-start">Grandes Empresas 02</td><td>69</td><td>89</td><td>88</td><td class="text-nuevo">+3</td><td class="text-activado">+2</td><td class="text-desactivado">0</td><td class="text-fugado">-6</td><td>-1</td><td class="text-nuevo">+19</td></tr>
+        <tr class="total-row"><td></td><td class="text-start">TOTAL</td><td>183</td><td>240</td><td>245</td><td class="text-nuevo">+10</td><td class="text-activado">+6</td><td class="text-desactivado">0</td><td class="text-fugado">-11</td><td class="text-nuevo">+5</td><td class="text-nuevo">+62</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== PLAN 500 ===================== -->
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h2 class="h5 section-title mb-0">PLAN 500</h2>
+    <span class="section-sub small">617 activos · Δ mes +1</span>
+  </div>
+  <div class="table-responsive mb-4">
+    <table class="table table-striped table-pulso text-center align-middle mb-0">
+      <thead>
+        <tr>
+          <th rowspan="2">#</th>
+          <th rowspan="2" class="text-start">Sucursal</th>
+          <th colspan="3" class="col-stock">Clientes activos</th>
+          <th rowspan="2" class="col-meta">Meta<br>mensual</th>
+          <th colspan="4">Movimientos del mes</th>
+          <th colspan="2">Variación</th>
+          <th rowspan="2" class="col-meta">Cumplimiento<br>% meta</th>
+        </tr>
+        <tr>
+          <th class="col-stock">Dic. 2025</th><th class="col-stock">Ago. 2026</th><th class="col-stock">Sep. 2026</th>
+          <th class="col-nuevos">Nuevos</th><th class="col-activados">Activados</th>
+          <th class="col-desactivados">Desactivados</th><th class="col-fugados">Fugados</th>
+          <th>Δ mes</th><th>Δ vs. dic.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="text-start">Puerto Montt</td><td>73</td><td>66</td><td>71</td><td>9</td><td class="text-nuevo">+4</td><td class="text-activado">+3</td><td class="text-desactivado">0</td><td class="text-fugado">-2</td><td class="text-nuevo">+5</td><td>-2</td><td class="text-nuevo">55,6%</td></tr>
+        <tr><td>2</td><td class="text-start">Santa Elena</td><td>79</td><td>47</td><td>51</td><td>15</td><td class="text-nuevo">+5</td><td class="text-activado">+4</td><td class="text-desactivado">-2</td><td class="text-fugado">-3</td><td class="text-nuevo">+4</td><td>-28</td><td class="text-nuevo">26,7%</td></tr>
+        <tr><td>3</td><td class="text-start">La Serena</td><td>48</td><td>42</td><td>44</td><td>9</td><td class="text-nuevo">+2</td><td class="text-activado">+2</td><td class="text-desactivado">-1</td><td class="text-fugado">-1</td><td class="text-nuevo">+2</td><td>-4</td><td class="text-nuevo">22,2%</td></tr>
+        <tr><td>4</td><td class="text-start">Huérfanos</td><td>38</td><td>38</td><td>40</td><td>15</td><td class="text-nuevo">+4</td><td class="text-activado">0</td><td class="text-desactivado">-2</td><td class="text-fugado">0</td><td class="text-nuevo">+2</td><td class="text-nuevo">+2</td><td class="text-nuevo">13,3%</td></tr>
+        <tr><td>5</td><td class="text-start">Antofagasta</td><td>20</td><td>13</td><td>15</td><td>6</td><td class="text-nuevo">+2</td><td class="text-activado">0</td><td class="text-desactivado">0</td><td class="text-fugado">0</td><td class="text-nuevo">+2</td><td>-5</td><td class="text-nuevo">33,3%</td></tr>
+        <tr><td>6</td><td class="text-start">Talca</td><td>39</td><td>49</td><td>50</td><td>9</td><td class="text-nuevo">+4</td><td class="text-activado">+1</td><td class="text-desactivado">-1</td><td class="text-fugado">-3</td><td class="text-nuevo">+1</td><td class="text-nuevo">+11</td><td class="text-nuevo">11,1%</td></tr>
+        <tr><td>7</td><td class="text-start">Iquique</td><td>17</td><td>16</td><td>17</td><td>6</td><td>0</td><td class="text-activado">+1</td><td class="text-desactivado">0</td><td class="text-fugado">0</td><td class="text-nuevo">+1</td><td>0</td><td class="text-nuevo">16,7%</td></tr>
+        <tr><td>8</td><td class="text-start">Viña del Mar</td><td>56</td><td>54</td><td>54</td><td>12</td><td class="text-nuevo">+3</td><td class="text-activado">+2</td><td class="text-desactivado">-1</td><td class="text-fugado">-4</td><td>0</td><td>-2</td><td>0,0%</td></tr>
+        <tr><td>9</td><td class="text-start">Concepción</td><td>58</td><td>52</td><td>52</td><td>15</td><td>0</td><td class="text-activado">+3</td><td class="text-desactivado">0</td><td class="text-fugado">-3</td><td>0</td><td>-6</td><td>0,0%</td></tr>
+        <tr><td>10</td><td class="text-start">Chillán</td><td>36</td><td>29</td><td>29</td><td>6</td><td>0</td><td class="text-activado">0</td><td class="text-desactivado">0</td><td class="text-fugado">0</td><td>0</td><td>-7</td><td>0,0%</td></tr>
+        <tr><td>11</td><td class="text-start">Moneda</td><td>77</td><td>61</td><td>60</td><td>15</td><td class="text-nuevo">+2</td><td class="text-activado">+1</td><td class="text-desactivado">-1</td><td class="text-fugado">-3</td><td>-1</td><td>-17</td><td class="text-fugado">-6,7%</td></tr>
+        <tr><td>12</td><td class="text-start">Temuco</td><td>28</td><td>26</td><td>25</td><td>6</td><td class="text-nuevo">+1</td><td class="text-activado">0</td><td class="text-desactivado">0</td><td class="text-fugado">-2</td><td>-1</td><td>-3</td><td class="text-fugado">-16,7%</td></tr>
+        <tr><td>13</td><td class="text-start">Valdivia</td><td>49</td><td>38</td><td>35</td><td>6</td><td class="text-nuevo">+2</td><td class="text-activado">0</td><td class="text-desactivado">-3</td><td class="text-fugado">-2</td><td>-3</td><td>-14</td><td class="text-fugado">-50,0%</td></tr>
+        <tr><td>14</td><td class="text-start">Rancagua</td><td>28</td><td>28</td><td>25</td><td>9</td><td>0</td><td class="text-activado">0</td><td class="text-desactivado">0</td><td class="text-fugado">-3</td><td>-3</td><td>-3</td><td class="text-fugado">-33,3%</td></tr>
+        <tr><td>15</td><td class="text-start">Providencia</td><td>55</td><td>57</td><td>49</td><td>15</td><td class="text-nuevo">+1</td><td class="text-activado">0</td><td class="text-desactivado">-5</td><td class="text-fugado">-4</td><td class="text-fugado">-8</td><td>-6</td><td class="text-fugado">-53,3%</td></tr>
+        <tr class="total-row"><td></td><td class="text-start">TOTAL</td><td>701</td><td>616</td><td>617</td><td>153</td><td class="text-nuevo">+30</td><td class="text-activado">+17</td><td class="text-desactivado">-16</td><td class="text-fugado">-30</td><td class="text-nuevo">+1</td><td>-84</td><td>0,7%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== DEFINICIONES ===================== -->
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h2 class="h5 section-title mb-0">Definiciones de las categorías</h2>
+    <span class="text-muted small">Conteo de RUT únicos · movimientos entre el cierre actual y el mes anterior.</span>
+  </div>
+  <div class="row g-3 mb-4">
+    <div class="col-md">
+      <div class="card def-card def-activo"><div class="card-body">
+        <h6 class="fw-bold mb-1">Cliente activo</h6>
+        <div class="def-tipo text-primary mb-2">STOCK AL CIERRE</div>
+        <p class="small text-muted mb-0">RUT que cumple Stock TBD &gt; $0 (Stock TSF &gt; $0 y línea TBD). No es Pyme 1 y tiene stock consolidado (TSF + TBD) ≥ $10 MM para Banca Empresas o ≥ $30 MM para Grandes Empresas.</p>
+      </div></div>
+    </div>
+    <div class="col-md">
+      <div class="card def-card def-nuevo"><div class="card-body">
+        <h6 class="fw-bold mb-1">Nuevo</h6>
+        <div class="def-tipo text-success mb-2">ENTRADA DEL MES</div>
+        <p class="small text-muted mb-0">RUT que no estaba activo en el cierre anterior, si está activo en el actual y no registra una operación previa o su última operación ocurrió al menos 12 meses antes del cierre.</p>
+      </div></div>
+    </div>
+    <div class="col-md">
+      <div class="card def-card def-activado"><div class="card-body">
+        <h6 class="fw-bold mb-1">Activado</h6>
+        <div class="def-tipo text-success mb-2">ENTRADA DEL MES</div>
+        <p class="small text-muted mb-0">RUT que no estaba activo en el cierre anterior y sí está activo en el actual, pero no cumple la condición de Nuevo.</p>
+      </div></div>
+    </div>
+    <div class="col-md">
+      <div class="card def-card def-desact"><div class="card-body">
+        <h6 class="fw-bold mb-1">Desactivado</h6>
+        <div class="def-tipo text-warning mb-2">SALIDA DEL MES</div>
+        <p class="small text-muted mb-0">RUT activo en el cierre anterior que queda bajo el umbral de su unidad, con stock consolidado ≥ $1 MM. Se muestra en negativo.</p>
+      </div></div>
+    </div>
+    <div class="col-md">
+      <div class="card def-card def-fugado"><div class="card-body">
+        <h6 class="fw-bold mb-1">Fugado</h6>
+        <div class="def-tipo text-danger mb-2">SALIDA DEL MES</div>
+        <p class="small text-muted mb-0">RUT activo en el cierre anterior que mantiene activación válida y no es Pyme 1, pero su stock consolidado cae bajo $1 MM. Se muestra en negativo.</p>
+      </div></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="px-4 pb-4">
+  <div class="d-flex justify-content-between flex-wrap gap-2">
+    <span>Fuente: Databricks · clasificación de clientes activos TSF + TBD</span>
+    <span>Δ zona/sucursal puede incluir recarterización · Runoff y otras salidas se controlan en auditoría.</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="24 Bootstrap table examples: striped, bordered, compact, dark, comparison, invoice, heatmap, sticky headers, and more."
+    />
+    <title>Table gallery — Foundation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet" />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/tables.css" rel="stylesheet" />
+    <!-- Palette overrides must load after all other stylesheets. -->
+    
+    <style>
+        body { background:#f4f6fa; font-size:.9rem; }
+        .navbar-pulso { background:#002856; }
+        .navbar-pulso .navbar-brand { font-weight:700; font-size:1.15rem; letter-spacing:.02em; }
+        .navbar-pulso .navbar-text { font-size:.8rem; }
+        .kpi-card { border:0; border-radius:.5rem; box-shadow:0 1px 4px rgba(0,0,0,.08); }
+        .kpi-icon { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.2rem; font-weight:700; }
+        .kpi-val { font-size:1.6rem; font-weight:800; line-height:1; }
+        .section-title { font-weight:700; }
+        .section-sub { color:#2e8b57; font-weight:600; }
+        .table-pulso thead th { background:#002856; color:#fff; vertical-align:middle; font-weight:600; font-size:.8rem; border:1px solid #002856; }
+        .table-pulso thead .col-stock { background:#003a75; }
+        .table-pulso thead .col-nuevos { background:#1e8e4e; }
+        .table-pulso thead .col-activados { background:#5cb85c; }
+        .table-pulso thead .col-desactivados { background:#f0ad00; }
+        .table-pulso thead .col-fugados { background:#d9534f; }
+        .table-pulso thead .col-meta { background:#2a9fd8; }
+        .table-pulso tbody tr.total-row { background:#dce6f5 !important; font-weight:700; }
+        .text-nuevo { color:#1e8e4e; font-weight:600; }
+        .text-activado { color:#5cb85c; font-weight:600; }
+        .text-desactivado { color:#e0a800; font-weight:600; }
+        .text-fugado { color:#d9534f; font-weight:600; }
+        .def-card { border:0; border-left:5px solid; border-radius:.4rem; height:100%; }
+        .def-activo  { border-left-color:#2a9fd8; }
+        .def-nuevo   { border-left-color:#1e8e4e; }
+        .def-activado{ border-left-color:#5cb85c; }
+        .def-desact  { border-left-color:#f0ad00; }
+        .def-fugado  { border-left-color:#d9534f; }
+        .def-tipo { font-size:.72rem; font-weight:700; letter-spacing:.05em; }
+        footer { font-size:.78rem; color:#6c757d; }
+    </style>
+    <link href="../assets/css/tanner.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar sticky-top bg-white border-bottom" aria-label="Main navigation">
+      <div class="container-xxl">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+          <img style="height: 40px;" src="../assets/images/logos/TBD_punto.svg " />
+          <span class="d-flex flex-column flex-wrap">
+            <span style="margin-bottom:-10px;color: var(--tanner-primary-green);font-size:26px;"><span class="text-primary">Punto</span> Diario</span>
+            <span style="color: var(--fintech-gray-400);font-size:17px;">Direcci&oacute;n Comercial</span>
+          </span>
+          </a>
+        <div class="d-flex align-items-center gap-3">
+          
+        </div>
+      </div>
+    </nav>
+    <header class="gallery-hero border-bottom">
+      <div class="container-xxl py-0">
+        <div class="row align-items-end g-4 mt-1">
+          <div class="col-lg-12">
+            <h1 style="margin-left:-10px;">
+              <span class="fa-stack" style="font-size: 1.6rem;margin-right: -10px; margin-top: -10px;">
+                <i class="fa-solid fa-circle fa-stack-2x" style="color:var(--tanner-secondary-green) !important;"></i>
+                <i class="fa-solid fa-mug-hot fa-stack-1x" style="color:var(--fintech-surface) !important;"></i>
+              </span> 
+              Resumen Consolidado Diario Stock 
+              <span style="font-size:1.1rem;background-color: var(--tanner-accent-cyan) !important;" class="badge text-bg-primary">TSF</span>
+              <span style="font-size:1.1rem;background-color: var(--tanner-primary-blue) !important;" class="badge text-bg-primary">TBD</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main" class="container-xxl py-5">
+      <!-- ===================== KPIs ===================== -->
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div><div class="text-muted small">Dic-2025</div><div class="kpi-val" style="color: var(--tanner-primary-blue); font-size:28px !important;font-weight: lighter;">891.184</div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div><div class="text-muted small">Ago-2026</div><div class="kpi-val" style="color: var(--tanner-primary-blue); font-size:28px !important;font-weight: lighter;">1.124.604</div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div><div class="text-muted small">Día Anterior</div><div class="kpi-val" style="color: var(--tanner-primary-blue); font-size:28px !important;font-weight: lighter;">1.147.753</div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card" style="background-color: var(--tanner-secondary-blue);"><div class="card-body d-flex align-items-center gap-3">
+            <div><div class="small" style="color: var(--tanner-surface);">Día Actual <small style="color: var(--tanner-text-primary); font-weight: bold;">29/09/2026</small></div><div class="kpi-val" style="color: var(--tanner-surface); font-size:28px !important;font-weight: bold;">1.159.301</div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div class="kpi-icon bg-success-subtle text-success"><i class="fa-solid fa-arrow-up"></i></div>
+            <div><div class="text-muted small">Var. Día</div><div class="kpi-val text-success">
+              11.549
+              <span style="font-size:10px;color:var(--bs-success-border-subtle);">+1.2%</span>
+            </div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div class="kpi-icon bg-success-subtle text-success"><i class="fa-solid fa-arrow-up"></i></div>
+            <div><div class="text-muted small">Var. Mes</div><div class="kpi-val text-success">
+              34.698
+              <span style="font-size:10px;color:var(--bs-success-border-subtle);">+3.2%</span>
+            </div></div>
+          </div></div>
+        </div>
+        <div class="col-6 col-md pt-0">
+          <div class="card kpi-card"><div class="card-body d-flex align-items-center gap-3">
+            <div class="kpi-icon bg-success-subtle text-success"><i class="fa-solid fa-arrow-up"></i></div>
+            <div><div class="text-muted small">Var. Año</div><div class="kpi-val text-success">
+              268.118
+              <span style="font-size:10px;color:var(--bs-success-border-subtle);">+10.2%</span>
+            </div></div>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- ===================== TABLA 1 ===================== -->
+      <div class="table-responsive mb-4">
+        <div class="card table-card">
+          <div class="card-header table-card-header">
+              <div>
+                  <h5 class="mb-1">Resumen</h5>
+                  <small>(Cifras en MM$)</small>
+              </div>
+
+              <div>
+                <h4 style="color:var(--tanner-text-primary);">
+                  <i class="fa-solid fa-tag" style="color:var(--tanner-secondary-blue);"></i>
+                  29 de Septiembre de 2026
+                </h4>
+              </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered2 comparison-table2 numeric-table table-sm compact-table  table-fintech align-middle mb-0 py-0">
+                <thead> 
+                    <tr>
+                        <th>Unidad Negocio</th>
+                        <th class="text-end">Dic-2025</th>
+                        <th class="text-end">Ago-2026</th>
+                        <th class="text-end">Día anterior</th>
+                        <th class="text-end">Día actual</th>
+                        <th class="text-end">Var. Día</th>
+                        <th class="text-end">Var. Mes</th>
+                        <th class="text-end">Var. Año</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="unidad-negocio">
+                        <td><div class="table-primary-text">Banca Empresa</div></td>
+                        <td class="text-end">615.442</td>
+                        <td class="text-end">738.511</td>
+                        <td class="text-end">762.617</td>
+                        <td class="text-end table-number">772.511</td>
+                        <td class="text-end"><span class="status status-success"> 9.894 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 34.000 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 157.069 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="zona">
+                        <td><div class="table-primary-text">Empresas</div></td>
+                        <td class="text-end">273.866</td>
+                        <td class="text-end">274.741</td>
+                        <td class="text-end">284.948</td>
+                        <td class="text-end table-number">288.880</td>
+                        <td class="text-end"><span class="status status-success"> 3.932 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 14.139 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 15.014 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="zona">
+                        <td><div class="table-primary-text">Zona Norte</div></td>
+                        <td class="text-end">72.782</td>
+                        <td class="text-end">72.808</td>
+                        <td class="text-end">79.348</td>
+                        <td class="text-end table-number">79.959</td>
+                        <td class="text-end"><span class="status status-success"> 611 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 7.151 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 7.177 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Antofagasta</div></td>
+                        <td class="text-end">8.565</td>
+                        <td class="text-end">5.235</td>
+                        <td class="text-end">7.498</td>
+                        <td class="text-end table-number">7.557</td>
+                        <td class="text-end"><span class="status status-success"> 59 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 2.322 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -1.008 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Iquique</div></td>
+                        <td class="text-end">7.359</td>
+                        <td class="text-end">8.602</td>
+                        <td class="text-end">9.770</td>
+                        <td class="text-end table-number">9.820</td>
+                        <td class="text-end"><span class="status status-success"> 50 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.218 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 2.461 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">La Serena</div></td>
+                        <td class="text-end">15.658</td>
+                        <td class="text-end">12.643</td>
+                        <td class="text-end">13.335</td>
+                        <td class="text-end table-number">13.425</td>
+                        <td class="text-end"><span class="status status-success"> 90 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 782 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -2.234 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Rancagua</div></td>
+                        <td class="text-end">22.051</td>
+                        <td class="text-end">33.243</td>
+                        <td class="text-end">34.347</td>
+                        <td class="text-end table-number">35.025</td>
+                        <td class="text-end"><span class="status status-success"> 678 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.782 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 12.974 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Viña del Mar</div></td>
+                        <td class="text-end">19.098</td>
+                        <td class="text-end">13.086</td>
+                        <td class="text-end">14.399</td>
+                        <td class="text-end table-number">14.133</td>
+                        <td class="text-end"><span class="status status-danger"> -266 <i class="fa-solid fa-caret-down"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.047 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -4.965 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Zona Norte</div></td>
+                        <td class="text-end">52</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end table-number">0</td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status status-danger"> -52 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="zona">
+                        <td><div class="table-primary-text">Zona Metro</div></td>
+                        <td class="text-end">108.111</td>
+                        <td class="text-end">113.389</td>
+                        <td class="text-end">112.617</td>
+                        <td class="text-end table-number">114.959</td>
+                        <td class="text-end"><span class="status status-success"> 2.342 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.570 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 6.849 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Casa Matriz</div></td>
+                        <td class="text-end">1.559</td>
+                        <td class="text-end">605</td>
+                        <td class="text-end">547</td>
+                        <td class="text-end table-number">547</td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status status-danger"> -58 <i class="fa-solid fa-caret-down"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -1.012 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Huérfanos</div></td>
+                        <td class="text-end">30.874</td>
+                        <td class="text-end">33.342</td>
+                        <td class="text-end">32.576</td>
+                        <td class="text-end table-number">33.649</td>
+                        <td class="text-end"><span class="status status-success"> 1.073 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 308 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 2.776 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Moneda</div></td>
+                        <td class="text-end">24.457</td>
+                        <td class="text-end">23.464</td>
+                        <td class="text-end">22.021</td>
+                        <td class="text-end table-number">21.995</td>
+                        <td class="text-end"><span class="status status-danger"> -26 <i class="fa-solid fa-caret-down"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -1.469 <i class="fa-solid fa-caret-down"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -2.462 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Providencia</div></td>
+                        <td class="text-end">28.472</td>
+                        <td class="text-end">33.260</td>
+                        <td class="text-end">34.005</td>
+                        <td class="text-end table-number">34.353</td>
+                        <td class="text-end"><span class="status status-success"> 348 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.093 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 5.881 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Santa Elena</div></td>
+                        <td class="text-end">22.749</td>
+                        <td class="text-end">22.718</td>
+                        <td class="text-end">23.468</td>
+                        <td class="text-end table-number">24.415</td>
+                        <td class="text-end"><span class="status status-success"> 947 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.697 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.666 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="zona">
+                        <td><div class="table-primary-text">Zona Sur</div></td>
+                        <td class="text-end">92.973</td>
+                        <td class="text-end">88.544</td>
+                        <td class="text-end">92.983</td>
+                        <td class="text-end table-number">93.962</td>
+                        <td class="text-end"><span class="status status-success"> 979 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 5.418 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 989 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Chillan</div></td>
+                        <td class="text-end">15.008</td>
+                        <td class="text-end">17.335</td>
+                        <td class="text-end">17.181</td>
+                        <td class="text-end table-number">17.475</td>
+                        <td class="text-end"><span class="status status-success"> 294 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 140 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 2.467 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Concepción</div></td>
+                        <td class="text-end">24.259</td>
+                        <td class="text-end">22.692</td>
+                        <td class="text-end">25.979</td>
+                        <td class="text-end table-number">26.064</td>
+                        <td class="text-end"><span class="status status-success"> 84 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 3.371 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.805 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Puerto Montt</div></td>
+                        <td class="text-end">19.296</td>
+                        <td class="text-end">15.373</td>
+                        <td class="text-end">16.287</td>
+                        <td class="text-end table-number">16.377</td>
+                        <td class="text-end"><span class="status status-success"> 90 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.004 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -2.919 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Talca</div></td>
+                        <td class="text-end">14.213</td>
+                        <td class="text-end">16.829</td>
+                        <td class="text-end">17.005</td>
+                        <td class="text-end table-number">17.075</td>
+                        <td class="text-end"><span class="status status-success"> 70 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 246 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 2.862 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Temuco</div></td>
+                        <td class="text-end">6.394</td>
+                        <td class="text-end">5.885</td>
+                        <td class="text-end">6.618</td>
+                        <td class="text-end table-number">7.003</td>
+                        <td class="text-end"><span class="status status-success"> 385 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.118 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 608 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Valdivia</div></td>
+                        <td class="text-end">13.198</td>
+                        <td class="text-end">10.397</td>
+                        <td class="text-end">9.904</td>
+                        <td class="text-end table-number">9.961</td>
+                        <td class="text-end"><span class="status status-success"> 57 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -436 <i class="fa-solid fa-caret-down"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -3.237 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="zona">
+                        <td><div class="table-primary-text">Zona Sur</div></td>
+                        <td class="text-end">604</td>
+                        <td class="text-end">32</td>
+                        <td class="text-end">8</td>
+                        <td class="text-end table-number">7</td>
+                        <td class="text-end"><span class="status status-danger"> -1 <i class="fa-solid fa-caret-down"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -25 <i class="fa-solid fa-caret-down"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -597 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Zona Digital</div></td>
+                        <td class="text-end">0</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end table-number">0</td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status">0</span></td>
+                    </tr>
+
+                    <tr class="unidad-negocio">
+                        <td><div class="table-primary-text">Grandes Empresas</div></td>
+                        <td class="text-end">303.284</td>
+                        <td class="text-end">424.218</td>
+                        <td class="text-end">438.179</td>
+                        <td class="text-end table-number">444.140</td>
+                        <td class="text-end"><span class="status status-success"> 5.962 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 19.922 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 140.856 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Grandes Empresas 01</div></td>
+                        <td class="text-end">87.724</td>
+                        <td class="text-end">124.469</td>
+                        <td class="text-end">127.200</td>
+                        <td class="text-end table-number">128.756</td>
+                        <td class="text-end"><span class="status status-success"> 1.556 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 4.288 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 41.032 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Grandes Empresas 02</div></td>
+                        <td class="text-end">132.491</td>
+                        <td class="text-end">170.800</td>
+                        <td class="text-end">161.003</td>
+                        <td class="text-end table-number">165.143</td>
+                        <td class="text-end"><span class="status status-success"> 4.140 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-danger"> -5.657 <i class="fa-solid fa-caret-down"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 32.652 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Grandes Empresas 03</div></td>
+                        <td class="text-end">83.068</td>
+                        <td class="text-end">128.949</td>
+                        <td class="text-end">149.976</td>
+                        <td class="text-end table-number">150.240</td>
+                        <td class="text-end"><span class="status status-success"> 265 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 21.291 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 67.172 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Grandes Empresas 04</div></td>
+                        <td class="text-end">0</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end table-number">0</td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status">0</span></td>
+                    </tr>
+
+                    <tr class="zona">
+                        <td><div class="table-primary-text">Digital</div></td>
+                        <td class="text-end">114</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end table-number">0</td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status status-danger"> -114 <i class="fa-solid fa-caret-down"></i></span></td>
+                    </tr>
+
+                    <tr class="zona">
+                        <td><div class="table-primary-text">Sin Asignar</div></td>
+                        <td class="text-end">38.178</td>
+                        <td class="text-end">39.552</td>
+                        <td class="text-end">39.491</td>
+                        <td class="text-end table-number">39.491</td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status status-danger"> -61 <i class="fa-solid fa-caret-down"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 1.312 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">Banca Corporativa</div></td>
+                        <td class="text-end">275.742</td>
+                        <td class="text-end">386.093</td>
+                        <td class="text-end">385.136</td>
+                        <td class="text-end table-number">386.791</td>
+                        <td class="text-end"><span class="status status-success"> 1.655 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 698 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 111.049 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+
+                    <tr class="sucursal">
+                        <td><div class="table-primary-text">No Aplica</div></td>
+                        <td class="text-end">0</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end">0</td>
+                        <td class="text-end table-number">0</td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status">0</span></td>
+                        <td class="text-end"><span class="status">0</span></td>
+                    </tr>
+
+                    
+
+                </tbody>
+                <tfoot>
+                  <tr class="table-total" style="font-size: 1.1rem; font-weight: bold;">
+                        <td><div class="table-primary-text">Total</div></td>
+                        <td class="text-end">891.184</td>
+                        <td class="text-end">1.124.604</td>
+                        <td class="text-end">1.147.753</td>
+                        <td class="text-end table-number">1.159.301</td>
+                        <td class="text-end"><span class="status status-success"> 11.549 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 34.698 <i class="fa-solid fa-caret-up"></i></span></td>
+                        <td class="text-end"><span class="status status-success"> 268.118 <i class="fa-solid fa-caret-up"></i></span></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+      </div>
+      </div>
+      <!-- ===================== FIN TABLA 1 ===================== -->
+
+    </main>
+    <footer class="border-top py-4">
+      <div class="container-xxl d-flex flex-wrap justify-content-between gap-3">
+        <a class="fw-bold text-dark text-decoration-none" href="index.html">
+          Inteligencia de Negocios - Divisi&oacute;on de Banca Empresas y Grandes Empresas
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

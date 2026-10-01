@@ -88,6 +88,33 @@
   --bs-dark-text-emphasis: #04070d;
   --bs-dark-bg-subtle: #e7e7e9;
   --bs-dark-border-subtle: #aaacb1;
+
+
+  /* Brand */
+    --fintech-primary: #0014A7;
+    --fintech-green: #00B250;
+    --fintech-electric: #0600FF;
+    --fintech-blue: #0093FF;
+    --fintech-cyan: #1DEFFF;
+
+    /* Status */
+    --fintech-success: #00B250;
+    --fintech-danger: #DC3545;
+    --fintech-warning: #F59E0B;
+    --fintech-info: #0093FF;
+
+    /* Text */
+    --fintech-gray-400: #94A3B8;
+    --fintech-gray-500: #64748B;
+    --fintech-gray-600: #475569;
+    --fintech-gray-700: #334155;
+    --fintech-gray-800: #1E293B;
+    --fintech-gray-900: #0F172A;
+
+    /* UI */
+    --fintech-background: #F8FAFC;
+    --fintech-surface: #FFFFFF;
+    --fintech-border: #E2E8F0;
 }
 
 /* Bootstrap components compile local variables; root tokens alone are insufficient. */
@@ -845,3 +872,657 @@
   color: var(--bs-primary);
   border-color: var(--bs-primary-border-subtle);
 }
+
+
+
+
+
+
+
+
+/* ============================================================
+   FINTECH TABLE
+   Bootstrap 5
+   ============================================================ */
+
+:root {
+
+    /* Brand */
+    --fintech-primary: #0014A7;
+    --fintech-success: #00B250;
+
+    --fintech-blue-electric: #0600FF;
+    --fintech-blue-light: #0093FF;
+    --fintech-cyan: #1DEFFF;
+
+    /* Status */
+    --fintech-status-success: #00B250;
+    --fintech-status-danger: #DC3545;
+    --fintech-status-warning: #F59E0B;
+    --fintech-status-info: #0093FF;
+
+    /* Text */
+    --fintech-gray-400: #94A3B8;
+    --fintech-gray-500: #64748B;
+    --fintech-gray-600: #475569;
+    --fintech-gray-700: #334155;
+    --fintech-gray-800: #1E293B;
+    --fintech-gray-900: #0F172A;
+
+    /* UI */
+    --fintech-background: #F8FAFC;
+    --fintech-surface: #FFFFFF;
+    --fintech-border: #E2E8F0;
+}
+
+
+/* ============================================================
+   CARD CONTAINER
+   ============================================================ */
+
+.table-card {
+    background: var(--fintech-surface);
+
+    border: 1px solid var(--fintech-border);
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 1px 3px rgba(15, 23, 42, 0.04),
+        0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.table-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.25rem 1.5rem;
+
+    background: #FFFFFF;
+
+    border-bottom: 1px solid var(--fintech-border);
+}
+
+
+.table-card-header h5 {
+    color: var(--fintech-gray-900);
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+.table-card-header small {
+    color: var(--fintech-gray-500);
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.table-fintech {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--fintech-gray-700);
+    --bs-table-border-color: var(--fintech-border);
+
+    font-size: 0.875rem;
+
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   TABLE HEADER
+   ============================================================ */
+
+.table-fintech thead {
+    background-color: var(--tanner-text-secondary);
+}
+
+
+.table-fintech thead th {
+
+    padding: 0.9rem 1.25rem;
+
+    background-color: var(--tanner-text-secondary);
+
+    color: #FFFFFF;
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 0.045em;
+
+    text-transform: uppercase;
+
+    border: 0;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   ROWS
+   ============================================================ */
+
+.table-fintech tbody tr {
+
+    background-color: #FFFFFF;
+
+    transition:
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+.table-fintech tbody td {
+
+    padding: 1rem 1.25rem;
+
+
+    border-bottom: 1px solid var(--fintech-border);
+
+    vertical-align: middle;
+}
+
+
+/* Hover */
+
+.table-fintech tbody tr:hover {
+    background-color: #F8FAFC;
+}
+
+
+.table-fintech tbody tr:hover td {
+    background-color: rgba(0, 20, 167, 0.025);
+}
+
+
+/* Última fila */
+
+.table-fintech tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* ============================================================
+   PRIMARY TEXT
+   ============================================================ */
+
+.table-primary-text {
+
+    color: var(--fintech-gray-900);
+
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+.table-secondary-text {
+
+    color: var(--fintech-gray-500);
+
+    font-size: 0.78rem;
+}
+
+
+/* ============================================================
+   NUMBERS
+   ============================================================ */
+
+.table-number {
+
+    color: var(--fintech-gray-900) !important;
+
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   DATE
+   ============================================================ */
+
+.table-date {
+
+    color: var(--fintech-gray-700);
+
+    font-weight: 500;
+}
+
+
+/* ============================================================
+   STATUS
+   ============================================================ */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+}
+/* Status dot */
+
+.status::before {
+    font-family: 'Font Awesome 7 Free';
+    background-color: currentColor;
+    font-weight: 900;
+}
+
+
+/* SUCCESS */
+
+.status-success {
+    content: "/f0d8";
+    color: #00853C;
+    background-color: rgba(0, 178, 80, 0.10);
+}
+
+
+/* DANGER */
+
+.status-danger {
+    color: var(--fintech-status-danger);
+    background-color: rgba(220, 53, 69, 0.10);
+}
+
+
+/* WARNING */
+
+.status-warning {
+    color: #B76E00;
+    background-color: rgba(245, 158, 11, 0.12);
+}
+
+
+/* INFO */
+
+.status-info {
+    color: #0078D4;
+    background-color: rgba(0, 147, 255, 0.10);
+}
+
+
+/* ============================================================
+   ACTION BUTTON
+   ============================================================ */
+
+.btn-table-action {
+
+    padding: 0.4rem 0.7rem;
+
+    color: var(--fintech-primary);
+
+    background: transparent;
+
+    border: 1px solid var(--fintech-border);
+
+    border-radius: 7px;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+}
+
+
+.btn-table-action:hover {
+
+    color: #FFFFFF;
+
+    background-color: var(--fintech-primary);
+
+    border-color: var(--fintech-primary);
+}
+
+
+/* ============================================================
+   PRIMARY BUTTON
+   ============================================================ */
+
+.table-card .btn-primary {
+
+    --bs-btn-bg: var(--fintech-primary);
+    --bs-btn-border-color: var(--fintech-primary);
+
+    --bs-btn-hover-bg: var(--fintech-blue-electric);
+    --bs-btn-hover-border-color: var(--fintech-blue-electric);
+
+    font-weight: 600;
+
+    border-radius: 7px;
+}
+
+
+/* ============================================================
+   SELECTED ROW
+   ============================================================ */
+
+.table-fintech tr.table-selected td {
+
+    background-color: rgba(0, 20, 167, 0.055);
+}
+
+
+.table-fintech tr.table-selected td:first-child {
+
+    box-shadow:
+        inset 3px 0 0 var(--fintech-primary);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .table-fintech thead th,
+    .table-fintech tbody td {
+
+        padding:
+            0.8rem
+            1rem;
+    }
+
+}
+
+.table-corporate thead th {
+    color: white;
+    background: var(--fintech-primary);
+    border: 0;
+}
+
+.table-minimal thead th {
+
+    color: var(--fintech-gray-500);
+
+    background: #F8FAFC;
+
+    border-bottom:
+        1px solid var(--fintech-border);
+}
+
+
+.table-minimal td {
+
+    padding-top: .65rem;
+    padding-bottom: .65rem;
+}
+
+.table-status tr td:first-child {
+
+    border-left:
+        3px solid transparent;
+}
+
+
+.table-status .row-success td:first-child {
+    border-left-color: var(--fintech-success);
+}
+
+
+.table-status .row-warning td:first-child {
+    border-left-color: var(--fintech-warning);
+}
+
+
+.table-status .row-danger td:first-child {
+    border-left-color: var(--fintech-danger);
+}
+
+
+.table-kpi thead th {
+
+    color: var(--fintech-gray-500);
+
+    background: #F8FAFC;
+}
+
+
+.table-kpi .kpi-value {
+
+    color: var(--fintech-primary);
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    text-align: right;
+}
+
+
+.variation-up {
+
+    color: var(--fintech-success);
+
+    font-weight: 700;
+
+    text-align: right;
+}
+
+
+.variation-down {
+
+    color: var(--fintech-danger);
+
+    font-weight: 700;
+
+    text-align: right;
+}
+
+.table-ranking .rank {
+
+    color: var(--fintech-primary);
+
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+
+.rank-bar {
+
+    width: 100%;
+    height: 6px;
+
+    background: #E2E8F0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.rank-bar > div {
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--fintech-primary),
+            var(--fintech-blue)
+        );
+
+    border-radius: inherit;
+}
+
+
+.fintech-progress {
+
+    height: 7px;
+
+    background: #E2E8F0;
+
+    border-radius: 20px;
+}
+
+
+.fintech-progress .progress-bar {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--fintech-primary),
+            var(--fintech-blue)
+        );
+}
+
+.progress-complete .progress-bar {
+    background: var(--fintech-success);
+}
+
+.table-comparison td:nth-child(3),
+.table-comparison th:nth-child(3) {
+
+    background:
+        rgba(0, 147, 255, .055);
+}
+
+
+.table-comparison td:nth-child(3) {
+
+    color: var(--fintech-primary);
+
+    font-weight: 700;
+}
+
+
+.alert-dot {
+
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    margin-right: .4rem;
+
+    border-radius: 50%;
+}
+
+
+.alert-dot.danger {
+    background: var(--fintech-danger);
+}
+
+
+.alert-dot.warning {
+    background: var(--fintech-warning);
+}
+
+
+.alert-dot.success {
+    background: var(--fintech-success);
+}
+
+
+.alert-dot.info {
+    background: var(--fintech-info);
+}
+
+.table-executive thead th {
+
+    color: var(--fintech-gray-500);
+
+    background: white;
+
+    border-bottom:
+        2px solid var(--fintech-primary);
+}
+
+
+.table-executive td {
+
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+}
+
+
+.executive-value {
+
+    color: var(--fintech-primary) !important;
+
+    font-size: 1.05rem;
+    font-weight: 800;
+
+    text-align: right;
+}
+
+
+.table-fintech tbody td{
+  padding: 4px 6px;
+}
+
+.table-fintech tbody tr.unidad-negocio {
+    font-size: 1.0rem !important;
+    font-weight: bold;
+    color: var(--tanner-secondary-green) !important;
+    background: var(--fintech-gray-400) !important;
+    border-bottom: 1px solid var(--fintech-border);
+}
+
+.table-fintech tbody tr.unidad-negocio .status {
+  font-size: 1.0rem !important;
+  font-weight: bold;
+}
+
+.table>:not(caption)>*>* {
+    color: var(--tanner-text-secondary);
+}
+
+.table-fintech tbody tr.zona {
+    font-size: 0.8rem !important;
+    font-weight: bold;
+    color: var(--fintech-gray-900);
+    background: var(--tanner-border) !important;
+    border-bottom: 1px solid var(--fintech-border);
+}
+
+.table-fintech tbody tr.zona td:first-child {
+  padding-left: 20px;
+}
+
+
+.table-fintech tbody tr.zona .status {
+  font-size: 0.8rem !important;
+  font-weight: bold;
+}
+
+.table-fintech tbody tr.sucursal {
+    font-size: 0.75rem !important;
+    color: var(--fintech-gray-400);
+    background: var(--tanner-surface) !important;
+    border-bottom: 1px solid var(--fintech-border);
+}
+
+.table-fintech tbody tr.sucursal .status {
+  font-size: 0.75rem !important;
+  font-weight: normal;
+}
+
+.table-fintech tbody tr.sucursal td:first-child {
+  padding-left: 40px;
+}
+
+
+.kpi-val {
+    font-size: 1.0rem !important; 
+    font-weight: 600; 
+    line-height: 1;
+}
+

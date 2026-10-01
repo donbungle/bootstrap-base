@@ -202,10 +202,10 @@
   font-weight: 700;
   border-top: 2px solid #c8bde9;
 }
-.comparison-table tr > :not(:first-child) {
+.comparison-table tbody tr > :not(:first-child) {
   text-align: center;
 }
-.comparison-table tr > :nth-child(3) {
+.comparison-table tbody tr > :nth-child(5) {
   background: #f0ecfb;
   color: #52408d;
 }

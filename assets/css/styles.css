@@ -96,7 +96,7 @@ body {
   padding-block: 68px !important;
 }
 h1 {
-  font-size: clamp(2.8rem, 5.3vw, 4.7rem);
+  font-size: 3.2rem !important;
   font-weight: 750;
   letter-spacing: -3px;
   line-height: 1.07;
