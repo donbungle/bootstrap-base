@@ -6,6 +6,18 @@ A responsive, plain HTML component showcase built with Bootstrap 5.3.8. No packa
 
 Open `index.html` directly in a modern browser. An internet connection is required to load Bootstrap CSS and JavaScript from jsDelivr. Alternatively, run `python3 -m http.server 8080` in this directory and visit `http://localhost:8080`.
 
+### Run with Docker
+
+`docker-compose.yml` serves the site with nginx. The port and image are set in `.env`; copy `.env.example` to start (without a `.env`, the defaults are `PORT=8080` and `IMAGE=nginx:1.27-alpine`).
+
+```sh
+cp .env.example .env    # optional: edit PORT / IMAGE
+docker compose up -d    # visit http://localhost:8080 (or your PORT)
+docker compose down     # stop
+```
+
+The project folder is mounted read-only into the container, so edits show up on browser refresh without a restart. The `:Z` volume flag relabels files for SELinux hosts (Fedora/RHEL); it is ignored elsewhere.
+
 ## Customize
 
 - `index.html`: semantic page layout and live, reusable component examples. Copy the relevant markup, retaining unique IDs and matching `data-bs-target` / ARIA references.
